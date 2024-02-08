@@ -2,8 +2,8 @@ import { BookIcon } from '@sanity/icons'
 import { format, parseISO } from 'date-fns'
 import { defineField, defineType } from 'sanity'
 
+import categoryType from './category'
 import authorType from './author'
-
 /**
  * This file is the schema definition for a post.
  *
@@ -37,7 +37,7 @@ export default defineType({
         maxLength: 96,
         isUnique: (value, context) => context.defaultIsUnique(value, context),
       },
-      validation: (rule) => rule.required(),
+      // validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'content',
@@ -85,6 +85,12 @@ export default defineType({
       title: 'Date',
       type: 'datetime',
       initialValue: () => new Date().toISOString(),
+    }),
+    defineField({
+      name: 'category',
+      title: 'Category',
+      type: 'reference',
+      to: [{ type: categoryType.name }],
     }),
     defineField({
       name: 'author',
