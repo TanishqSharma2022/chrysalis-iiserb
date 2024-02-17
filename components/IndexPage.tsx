@@ -1,4 +1,4 @@
-
+import Navbar from 'components/Navbar'
 import Layout from 'components/BlogLayout'
 import HeroPost from 'components/HeroPost'
 import IndexPageHead from 'components/IndexPageHead'
@@ -6,6 +6,10 @@ import LandingMorePosts from 'components/LandingPage/LandingMoreStories'
 import * as demo from 'lib/demo.data'
 import type { Post, Settings } from 'lib/sanity.queries'
 import {Carousel} from './Carousel'
+// import { CommandPalette } from './commandPallete/CommandPallete'
+
+import command from '../data.json'
+
 
 export interface IndexPageProps {
   preview?: boolean
@@ -21,6 +25,7 @@ export default function IndexPage(props: IndexPageProps) {
 
   return (
     <>
+    <Navbar posts={posts} />
       <IndexPageHead settings={settings} />
       <Carousel posts={posts} />
       <Layout preview={preview} loading={loading}>
@@ -52,6 +57,8 @@ export default function IndexPage(props: IndexPageProps) {
             asdfasd
           </div>  
       </Layout>
+
+      
     </>
   )
 }
