@@ -2,8 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { memo, useSyncExternalStore } from 'react'
 
-import cover from './cover.png'
-
 const subscribe = () => () => {}
 
 export default memo(function IntroTemplate() {
@@ -45,65 +43,12 @@ export default memo(function IntroTemplate() {
 
   return (
     <div className="flex justify-center border border-gray-200 bg-gray-50">
-      <div className="mb-8 mt-20 grid max-w-screen-2xl grid-cols-1 gap-y-20 md:grid-cols-2 md:gap-x-16 md:gap-y-32 lg:gap-x-32 ">
+      <div className="border mb-8 mt-20 grid max-w-screen-2xl grid-cols-1 gap-y-20 md:grid-cols-2 md:gap-x-16 md:gap-y-32 lg:gap-x-32 ">
         
-
+knkj
 
       </div>
     </div>
   )
 })
 
-function Box({
-  circleTitle,
-  element,
-}: {
-  circleTitle: string
-  element: JSX.Element
-}) {
-  return (
-    <li className="mt-2 grid grid-flow-col grid-rows-1 place-content-start gap-3">
-      <div className="row-span-3 select-none">
-        <div className="relative flex h-6 w-6 select-none items-center justify-center rounded-full bg-gray-200 p-4 text-center">
-          {circleTitle}
-        </div>
-      </div>
-      {element}
-    </li>
-  )
-}
-
-function BlueLink({ href, text }: { href: string; text: string }) {
-  return (
-    <a
-      href={href}
-      className="text-blue-500 underline hover:text-blue-800"
-      target="_blank"
-      rel="noreferrer"
-    >
-      {text}
-    </a>
-  )
-}
-
-const RemoveBlock = ({ url }) => (
-  <a
-    className="hover:text-blue-800"
-    href={url}
-    target="_blank"
-    rel="noreferrer"
-  >
-    How to remove this block?
-  </a>
-)
-
-function getGitProvider() {
-  switch (process.env.NEXT_PUBLIC_VERCEL_GIT_PROVIDER) {
-    case 'gitlab':
-      return 'GitLab'
-    case 'bitbucket':
-      return 'Bitbucket'
-    default:
-      return 'GitHub'
-  }
-}

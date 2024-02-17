@@ -2,8 +2,9 @@ import { BookIcon } from '@sanity/icons'
 import { format, parseISO } from 'date-fns'
 import { defineField, defineType } from 'sanity'
 
-import categoryType from './category'
 import authorType from './author'
+import categoryType from './category'
+
 /**
  * This file is the schema definition for a post.
  *
@@ -26,7 +27,7 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (rule) => rule.required(),
+      // validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'slug',
@@ -90,7 +91,7 @@ export default defineType({
       name: 'category',
       title: 'Category',
       type: 'reference',
-      to: [{ type: categoryType.name }],
+      to: [{ type: 'category' }],
     }),
     defineField({
       name: 'author',

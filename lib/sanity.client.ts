@@ -13,6 +13,9 @@ import {
   postSlugsQuery,
   type Settings,
   settingsQuery,
+  postsByTypeQuery,
+  postCategoriesQuery,
+  CategoryRef
 } from 'lib/sanity.queries'
 import { createClient, type SanityClient } from 'next-sanity'
 
@@ -23,8 +26,10 @@ export function getClient(preview?: { token: string }): SanityClient {
     apiVersion,
     useCdn,
     perspective: 'published',
-    encodeSourceMap: preview?.token ? true : false,
-    studioUrl,
+    stega: {
+      enabled: preview?.token ? true : false,
+      studioUrl,
+    },
   })
   if (preview) {
     if (!preview.token) {
@@ -69,3 +74,23 @@ export async function getPostAndMoreStories(
 ): Promise<{ post: Post; morePosts: Post[] }> {
   return await client.fetch(postAndMoreStoriesQuery, { slug })
 }
+
+export async function getPostsByCategory(client: SanityClient, type: String): Promise<Post[]> {
+  type = type.toLowerCase()
+  const posts =  (await client.fetch(postsByTypeQuery, { type })) || []
+  console.log(posts)
+  return posts
+}
+
+export async function getAllPostsCategories(): Promise<string[]> {
+  const client = getClient()
+  const categories = (await client.fetch<string[]>(postCategoriesQuery)) || []
+  return categories
+}
+
+export async function getCategoryRef(client: SanityClient, categoryName: string): Promise<string> {
+  const categoryRef =  await client.fetch(CategoryRef, { categoryName }) || ''
+  return categoryRef
+}
+
+

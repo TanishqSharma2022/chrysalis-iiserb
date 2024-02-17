@@ -12,8 +12,10 @@ export default defineType({
             title: 'Name',
             type: 'string',
             validation: (rule) => rule.required(),
-        })
+           
+        }), 
         
+
     ]
 
 })

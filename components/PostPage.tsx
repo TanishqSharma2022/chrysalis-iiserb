@@ -1,7 +1,7 @@
 import Container from 'components/BlogContainer'
 import BlogHeader from 'components/BlogHeader'
 import Layout from 'components/BlogLayout'
-import MoreStories from 'components/MoreStories'
+import MorePosts from 'components/MoreStories'
 import PostBody from 'components/PostBody'
 import PostHeader from 'components/PostHeader'
 import PostPageHead from 'components/PostPageHead'
@@ -23,7 +23,6 @@ const NO_POSTS: Post[] = []
 
 export default function PostPage(props: PostPageProps) {
   const { preview, loading, morePosts = NO_POSTS, post, settings } = props
-  const { title = demo.title } = settings || {}
 
   const slug = post?.slug
 
@@ -37,12 +36,11 @@ export default function PostPage(props: PostPageProps) {
 
       <Layout preview={preview} loading={loading}>
         <Container>
-          <BlogHeader title={title} level={2} />
           {preview && !post ? (
             <PostTitle>Loading…</PostTitle>
           ) : (
-            <>
-              <article>
+            <div className='px-4'>
+              <article className=' grid justify-center'>
                 <PostHeader
                   title={post.title}
                   coverImage={post.coverImage}
@@ -52,8 +50,8 @@ export default function PostPage(props: PostPageProps) {
                 <PostBody content={post.content} />
               </article>
               <SectionSeparator />
-              {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
-            </>
+              {morePosts?.length > 0 && <MorePosts posts={morePosts} />}
+            </div>
           )}
         </Container>
       </Layout>
