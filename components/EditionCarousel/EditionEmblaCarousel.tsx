@@ -6,7 +6,6 @@ import '../css/base.css'
 import '../css/embla.css'
 import Autoplay from 'embla-carousel-autoplay'
 
-import CarouselImage from './CarouselImage'
 import Link from 'next/link'
 
 const TWEEN_FACTOR = 1.2
@@ -79,12 +78,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 >
 
                     <div className=" embla__parallax__img  ">
-                      <CarouselImage
+                      {/* <CarouselImage
                         slug={slide.slug}
                         title={slide.title}
                         image={slide.coverImage}
                         priority
-                      />
+                      /> */}
 
                     </div>
                     <div className=" w-full px-12 z-10  absolute bottom-[10%] text-white ">

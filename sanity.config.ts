@@ -21,7 +21,7 @@ import authorType from 'schemas/author'
 import postType from 'schemas/post'
 import settingsType from 'schemas/settings'
 import categoryType from 'schemas/category'
-
+import editionType from 'schemas/editions'
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Next.js Blog with Sanity.io'
@@ -33,7 +33,7 @@ export default defineConfig({
   title,
   schema: {
     // If you want more content types, you can add them to this array
-    types: [categoryType, authorType, postType, settingsType],
+    types: [categoryType, editionType, authorType, postType, settingsType],
   },
   plugins: [
     structureTool({

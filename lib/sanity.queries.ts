@@ -85,3 +85,8 @@ export interface Settings {
     title?: string
   }
 }
+
+export interface Editions {
+  title: string,
+  description?: string,
+}

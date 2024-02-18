@@ -11,7 +11,7 @@ export default function BlogLayout({
 }) {
   return (
     <>
-      <div className=" min-h-screen">
+      <div className="mb-12 md:mb-0">
         <AlertBanner preview={preview} loading={loading} />
         <main>{children}</main>
       </div>

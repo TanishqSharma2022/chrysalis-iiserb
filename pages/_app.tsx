@@ -1,4 +1,5 @@
-import 'tailwindcss/tailwind.css'
+// import 'tailwindcss/tailwind.css'
+import 'pages/globals.css'
 
 import { VisualEditing } from '@sanity/visual-editing/next-pages-router'
 import { AppProps } from 'next/app'

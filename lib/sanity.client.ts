@@ -78,7 +78,6 @@ export async function getPostAndMoreStories(
 export async function getPostsByCategory(client: SanityClient, type: String): Promise<Post[]> {
   type = type.toLowerCase()
   const posts =  (await client.fetch(postsByTypeQuery, { type })) || []
-  console.log(posts)
   return posts
 }
 
