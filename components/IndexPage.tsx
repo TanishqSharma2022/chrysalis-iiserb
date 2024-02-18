@@ -6,17 +6,27 @@ import LandingMorePosts from 'components/LandingPage/LandingMoreStories'
 import * as demo from 'lib/demo.data'
 import type { Post, Settings } from 'lib/sanity.queries'
 import {Carousel} from './Carousel'
-// import { CommandPalette } from './commandPallete/CommandPallete'
-
-import command from '../data.json'
-
+import { useState } from 'react'
+import {
+  Command,
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from "components/ui/command"
+import { Example } from './commandPallete/CmdkPallete'
 
 export interface IndexPageProps {
   preview?: boolean
   loading?: boolean
   posts: Post[]
-  settings: Settings
+  settings: Settings,
 }
+
 
 export default function IndexPage(props: IndexPageProps) {
   const { preview, loading, posts, settings } = props
@@ -25,7 +35,15 @@ export default function IndexPage(props: IndexPageProps) {
 
   return (
     <>
-    <Navbar posts={posts} />
+    <Navbar />
+      {/* {posts.map((post) => (
+        <pre>{JSON.stringify(post.slug, null, 2)}</pre>
+        ))
+        } */}
+    <Example />
+
+
+
       <IndexPageHead settings={settings} />
       <Carousel posts={posts} />
       <Layout preview={preview} loading={loading}>
@@ -62,3 +80,6 @@ export default function IndexPage(props: IndexPageProps) {
     </>
   )
 }
+
+
+

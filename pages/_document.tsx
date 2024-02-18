@@ -3,9 +3,9 @@ import { Head, Html, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="en" suppressHydrationWarning>
       <Head />
-      <body className="bg-white text-black">
+      <body className="bg-white text-black" suppressHydrationWarning>
         
         <Main />
         <NextScript />
