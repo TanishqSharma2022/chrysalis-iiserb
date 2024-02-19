@@ -15,12 +15,12 @@ export default function CarouselImage(props: CoverImageProps) {
   const image = source?.asset?._ref ? (
     <div
       className={cn('shadow-small', {
-        'transition-shadow duration-200 shadow-lg hover:shadow-medium ': slug,
+        'transition-shadow duration-200  shadow-lg hover:shadow-medium ': slug,
       })}
     >
       <Image
-        className="max-h-[90vh] shadow-lg"
-        width={1900}
+        className="max-h-[90vh] min-h-[60vh]  aspect-[16/9] shadow-lg"
+        width={1500}
         height={1000}
         alt=""
         src={urlForImage(source).height(1000).width(1900).url()}

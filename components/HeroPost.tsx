@@ -26,7 +26,7 @@ export default function HeroPost(
             </div>
           
           )}
-          <h3 className="mb-4 text-3xl leading-tight lg:text-4xl text-balance font-bold">
+          <h3 className="mb-4 text-2xl leading-tight lg:text-3xl text-balance font-bold">
             <Link href={`/posts/${slug}`} className="hover:underline">
               {title || 'Untitled'}
             </Link>
@@ -49,7 +49,7 @@ export default function HeroPost(
         </div>
         <div>
           {excerpt && (
-            <p className="mt-4 text-lg">
+            <p className="mt-4 text-md">
               {excerpt}
             </p>
           )}

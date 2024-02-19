@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { EmblaOptionsType } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
-import { Thumb } from './EmblaCarouselThumbsButton'
 import Image from 'next/image'
 import { urlForImage } from 'lib/sanity.image'
-import 'css/base.css'
 import 'css/emblaedition.css'
+import { Thumb } from './EmblaCarouselThumbsButton'
 
 
 type PropType = {
@@ -13,11 +12,12 @@ type PropType = {
   options?: EmblaOptionsType
 }
 
-const EmblaCarousel: React.FC<PropType> = (props) => {
+const EditionEmblaCarousel: React.FC<PropType> = (props) => {
   const { coverImage, options } = props
-  const [selectedIndex, setSelectedIndex] = useState(0)
   const [emblaMainRef, emblaMainApi] = useEmblaCarousel(options)
+  const [selectedIndex, setSelectedIndex] = useState(0)
   const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
+    containScroll: 'keepSnaps',
     dragFree: true
   })
 
@@ -42,19 +42,27 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     emblaMainApi.on('reInit', onSelect)
   }, [emblaMainApi, onSelect])
 
+
+
+
+
   return (
-    <div className="embla">
-      <div className="embla__viewport" ref={emblaMainRef}>
+    <div className="embla border">
+      <div className="embla__viewport  " ref={emblaMainRef}>
         <div className="embla__container ">
-          {coverImage.map((image, index) => (
-            <div className="embla__slide   " key={index}>
+          {coverImage.map((image:any, index:number) => (
+            <div className="border embla__slide grid grid-rows-2 md:grid-cols-2 place-items-center justify-around " key={index}>
               <Image
-                  className=" shadow-2xl mx-auto embla__slide__img"
-                  width={300}
-                  height={400}
+                  className=" drop-shadow-xl  embla__slide__img"
+                  width={200}
+                  height={100}
                   alt=""
                   src={urlForImage(image.coverImage?.asset._ref).height(800).width(600)?.url()}
                 />
+              <div>
+                <h1>About the Edition</h1>
+                <p>All the blogs in it</p>
+              </div>
             </div>
             
           ))}
@@ -69,7 +77,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 onClick={() => onThumbClick(index)}
                 selected={index === selectedIndex}
                 index={index}
-                imgSrc={image.coverImage.asset._ref}
+                imgSrc={image.coverImage?.asset._ref}
                 key={index}
               />
             ))}
@@ -80,4 +88,4 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   )
 }
 
-export default EmblaCarousel
+export default EditionEmblaCarousel

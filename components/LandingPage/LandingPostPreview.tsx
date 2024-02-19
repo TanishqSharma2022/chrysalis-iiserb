@@ -14,7 +14,7 @@ export default function PostPreview({
   slug,
 }: Omit<Post, '_id'>) {
   return (
-    <div className='mt-4 grid grid-cols-3 gap-6  place-items-center justify-center'>
+    <div className='mt-4 grid grid-cols-3 gap-4 p-2'>
       <div className=" flex col-span-1">
         <MorePostsImage
           slug={slug}
@@ -24,10 +24,10 @@ export default function PostPreview({
         />
       </div>
       <div className='col-span-2'>
-      <div className="mb-2 text-sm">
+      <div className=" mb-1 text-xs">
         <Date dateString={date} />
       </div>
-      <h1 className="mb-1 font-bold leading-snug text-lg text-balance">
+      <h1 className="mb-1 font-bold  leading-snug text-md text-balance">
         <Link href={`/posts/${slug}`} className="  hover:underline">
           {title}
         </Link>

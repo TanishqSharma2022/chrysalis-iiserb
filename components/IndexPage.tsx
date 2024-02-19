@@ -20,14 +20,10 @@ export interface IndexPageProps {
 export default function IndexPage(props: IndexPageProps) {
   const { preview, loading, posts, settings, editions } = props
   const [heroPost, ...morePosts] = posts || []
-  const { title = demo.title, description = demo.description } = settings || {}
 
   return (
     <>
       <Navbar posts={posts} />
-
-
-
       <IndexPageHead settings={settings} />
       <Carousel posts={posts} />
       <Layout preview={preview} loading={loading}>
@@ -55,8 +51,8 @@ export default function IndexPage(props: IndexPageProps) {
           <div className="w-full bg-[url(https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=2600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover border h-[30vh]">
           </div>
           <div className='w-[80%] -mt-24 bg-white min-h-[70vh] shadow-lg mx-auto text-center'>
-            <h1 className='p-6 py-12 font-bold text-xl md:text-5xl'>Our Editions</h1>
-            <div className='p-12  border border-black flex'>
+            <h1 className='md:p-6 py-12 font-bold text-xl md:text-5xl'>Our Editions</h1>
+            <div className='md:p-12   flex'>
               <EditionCarousel coverImage={editions} />
             </div>
           </div>  

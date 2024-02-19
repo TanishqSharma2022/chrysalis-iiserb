@@ -19,9 +19,9 @@ export default function MorePostsImage(props: CoverImageProps) {
       })}
     >
       <Image
-        className="h-auto w-full aspect-square object-cover"
-        width={400}
-        height={400}
+        className=" aspect-square object-cover"
+        width={500}
+        height={500}
         alt=""
         src={urlForImage(source).height(1000).width(2000).url()}
         sizes="100vw"
