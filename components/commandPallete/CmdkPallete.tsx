@@ -46,7 +46,7 @@ export function Example({posts}) {
                       width={100}
                       height={100}
                       alt=""
-                      src={urlForImage(post.coverImage.asset._ref).height(100).width(100).url()}
+                      src={urlForImage(post.coverImage?.asset._ref).height(100).width(100).url()}
                        />  
                   </div>
                     <h1>

@@ -1,5 +1,6 @@
 import IndexPage from 'components/IndexPage'
 import PreviewIndexPage from 'components/PreviewIndexPage'
+import TopicPage from 'components/TopicPage'
 import { readToken } from 'lib/sanity.api'
 import {
   getAllPostsCategories,
@@ -15,6 +16,7 @@ import type { SharedPageProps } from 'pages/_app'
 interface PageProps extends SharedPageProps {
   posts: Post[]
   settings?: Settings
+
 }
 
 interface Query {
@@ -22,12 +24,12 @@ interface Query {
 }
 
 export default function ProjectSlugRoute(props: PageProps) {
-  const { settings, posts, draftMode } = props
-  if (draftMode) {
-    return <PreviewIndexPage posts={posts} settings={settings} />
-  }
+  const { settings, posts, draftMode} = props
+  // if (draftMode) {
+  //   return <PreviewIndexPage posts={posts} settings={settings} />
+  // }
 
-  return <IndexPage posts={posts} settings={settings} />
+  return <TopicPage posts={posts} settings={settings} />
 }
 
 export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
@@ -37,6 +39,7 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   const [settings, posts] = await Promise.all([
     getSettings(client),
     getPostsByCategory(client, categoryRef)
+    
   ])
   if (!posts) {
     return {
