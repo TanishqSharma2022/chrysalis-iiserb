@@ -15,7 +15,8 @@ import {
   settingsQuery,
   postsByTypeQuery,
   postCategoriesQuery,
-  CategoryRef
+  CategoryRef,
+  allEditions
 } from 'lib/sanity.queries'
 import { createClient, type SanityClient } from 'next-sanity'
 
@@ -93,3 +94,6 @@ export async function getCategoryRef(client: SanityClient, categoryName: string)
 }
 
 
+export async function getAllEditions(client: SanityClient) {
+  return (await client.fetch(allEditions)) || []
+}

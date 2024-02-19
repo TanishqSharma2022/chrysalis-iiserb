@@ -6,30 +6,19 @@ import LandingMorePosts from 'components/LandingPage/LandingMoreStories'
 import * as demo from 'lib/demo.data'
 import type { Post, Settings } from 'lib/sanity.queries'
 import {Carousel} from './Carousel'
-import { useState } from 'react'
-import {
-  Command,
-  CommandDialog,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-  CommandShortcut,
-} from "components/ui/command"
-import { Example } from './commandPallete/CmdkPallete'
+import {EditionCarousel} from './EditionCarousel/EditionCarousel'
 
 export interface IndexPageProps {
   preview?: boolean
   loading?: boolean
   posts: Post[]
   settings: Settings,
+  editions: any
 }
 
 
 export default function IndexPage(props: IndexPageProps) {
-  const { preview, loading, posts, settings } = props
+  const { preview, loading, posts, settings, editions } = props
   const [heroPost, ...morePosts] = posts || []
   const { title = demo.title, description = demo.description } = settings || {}
 
@@ -67,8 +56,8 @@ export default function IndexPage(props: IndexPageProps) {
           </div>
           <div className='w-[80%] -mt-24 bg-white min-h-[70vh] shadow-lg mx-auto text-center'>
             <h1 className='p-6 py-12 font-bold text-xl md:text-5xl'>Our Editions</h1>
-            <div className='p-12 border flex'>
-              
+            <div className='p-12  border border-black flex'>
+              <EditionCarousel coverImage={editions} />
             </div>
           </div>  
       </Layout>

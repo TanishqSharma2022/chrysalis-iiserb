@@ -1,123 +1,79 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { EmblaOptionsType } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
-import { flushSync } from 'react-dom'
-import '../css/base.css'
-import '../css/embla.css'
-import Autoplay from 'embla-carousel-autoplay'
+import { Thumb } from './EmblaCarouselThumbsButton'
+import Image from 'next/image'
+import { urlForImage } from 'lib/sanity.image'
+import 'css/base.css'
+import 'css/emblaedition.css'
 
-import Link from 'next/link'
-
-const TWEEN_FACTOR = 1.2
-const TWEEN_FACTOR_BRIGHTNESS = 2.2
 
 type PropType = {
-  posts: any[]
+  coverImage: any
   options?: EmblaOptionsType
 }
 
-const numberWithinRange = (number: number, min: number, max: number): number =>
-  Math.min(Math.max(number, min), max)
-
-
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { posts, options } = props
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay({stopOnInteraction: false})])
-  const [tweenValues, setTweenValues] = useState<any[]>([])
-  const [brightnessFilter, setBrightnessFilter] = useState<any[]>([])
+  const { coverImage, options } = props
+  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [emblaMainRef, emblaMainApi] = useEmblaCarousel(options)
+  const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
+    dragFree: true
+  })
 
-  const onScroll = useCallback(() => {
-    if (!emblaApi) return
+  const onThumbClick = useCallback(
+    (index: number) => {
+      if (!emblaMainApi || !emblaThumbsApi) return
+      emblaMainApi.scrollTo(index)
+    },
+    [emblaMainApi, emblaThumbsApi]
+  )
 
-    const engine = emblaApi.internalEngine()
-    const scrollProgress = emblaApi.scrollProgress()
-
-    const styles = emblaApi.scrollSnapList().map((scrollSnap, index) => {
-      let diffToTarget = scrollSnap - scrollProgress
-
-      if (engine.options.loop) {
-        engine.slideLooper.loopPoints.forEach((loopItem) => {
-          const target = loopItem.target()
-          if (index === loopItem.index && target !== 0) {
-            const sign = Math.sign(target)
-            if (sign === -1) diffToTarget = scrollSnap - (1 + scrollProgress)
-            if (sign === 1) diffToTarget = scrollSnap + (1 - scrollProgress)
-          }
-        })
-      }
-      const tweenValue = 1 - Math.abs(diffToTarget * TWEEN_FACTOR_BRIGHTNESS)
-      return diffToTarget * (-1 / TWEEN_FACTOR) * 100;
-    })
-    setTweenValues(styles)
-  }, [emblaApi, setTweenValues])
+  const onSelect = useCallback(() => {
+    if (!emblaMainApi || !emblaThumbsApi) return
+    setSelectedIndex(emblaMainApi.selectedScrollSnap())
+    emblaThumbsApi.scrollTo(emblaMainApi.selectedScrollSnap())
+  }, [emblaMainApi, emblaThumbsApi, setSelectedIndex])
 
   useEffect(() => {
-    if (!emblaApi) return
-    onScroll()
-    emblaApi.on('scroll', () => {
-      flushSync(() => onScroll())
-    })
-    emblaApi.on('reInit', onScroll)
-  }, [emblaApi, onScroll])
+    if (!emblaMainApi) return
+    onSelect()
+    emblaMainApi.on('select', onSelect)
+    emblaMainApi.on('reInit', onSelect)
+  }, [emblaMainApi, onSelect])
+
   return (
     <div className="embla">
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
-          {posts.map((slide, index) => (
-            <div className="embla__slide border " key={index}>
-              
-              <div className="embla__parallax">
-                <div
-                  className="embla__parallax__layer "
-                  style={{
-                    ...(tweenValues.length && {
-                      transform: `translateX(${tweenValues[index]}%)`,
-                      filter: `brightness(${brightnessFilter[index]})`
-                    }),
-                  }}
-                >
-
-                    <div className=" embla__parallax__img  ">
-                      {/* <CarouselImage
-                        slug={slide.slug}
-                        title={slide.title}
-                        image={slide.coverImage}
-                        priority
-                      /> */}
-
-                    </div>
-                    <div className=" w-full px-12 z-10  absolute bottom-[10%] text-white ">
-                      <Link
-                        href={`/posts/${slide.slug}`}
-                        className="text-md md:text-3xl font-bold hover:underline md:leading-[10px]"
-                      >
-                        {slide.title}
-                      </Link>
-                    </div>
-                  <div
-                    className="border  absolute top-0 left-0 z-10
-                    before:content-['']
-                    before:absolute
-                    before:inset-0
-                    before:left-0
-                    before:block
-                    before:bg-gradient-to-b
-                    before:from-[#ffffff00]
-                    before:from-10%
-                    before:via-[#ffffff00]
-                    before:via-30%
-                    before:to-black
-                    before:z-[5]
-                  w-full
-
-                    
-                    "
-                  >
-                  </div>
-                </div>
-              </div>
+      <div className="embla__viewport" ref={emblaMainRef}>
+        <div className="embla__container ">
+          {coverImage.map((image, index) => (
+            <div className="embla__slide   " key={index}>
+              <Image
+                  className=" shadow-2xl mx-auto embla__slide__img"
+                  width={300}
+                  height={400}
+                  alt=""
+                  src={urlForImage(image.coverImage?.asset._ref).height(800).width(600)?.url()}
+                />
             </div>
+            
           ))}
+        </div>
+      </div>
+
+      <div className="embla-thumbs">
+        <div className="embla-thumbs__viewport" ref={emblaThumbsRef}>
+          <div className="embla-thumbs__container">
+            {coverImage.map((image, index) => (
+              <Thumb
+                onClick={() => onThumbClick(index)}
+                selected={index === selectedIndex}
+                index={index}
+                imgSrc={image.coverImage.asset._ref}
+                key={index}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

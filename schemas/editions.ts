@@ -5,7 +5,7 @@ export default defineType({
   name: 'editions',
   title: 'Editions',
   icon: DocumentPdfIcon,
-  type: 'file',
+  type: 'document',
   fields: [
     defineField({
         name: 'title',
@@ -20,5 +20,17 @@ export default defineType({
         type: 'string',
        
     }), 
+    defineField({
+      name: 'coverImage',
+      title: 'Cover Image',
+      type: 'image',
+      validation: (rule) => rule.required(),
+  }),
+    defineField({
+        name: 'File',
+        title: 'File',
+        type: 'file',
+        validation: (rule) => rule.required(),
+    }),
   ]
 })

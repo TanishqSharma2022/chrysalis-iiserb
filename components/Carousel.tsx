@@ -2,7 +2,7 @@ import React from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import EmblaCarousel from './EmblaCarousel'
 import { EmblaOptionsType } from 'embla-carousel'
-import '../css/embla.css'
+import 'css/embla.css'
 
 export function Carousel({posts}) {
   const [emblaRef] = useEmblaCarousel()

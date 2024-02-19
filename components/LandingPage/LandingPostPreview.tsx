@@ -32,7 +32,7 @@ export default function PostPreview({
           {title}
         </Link>
       </h1>
-      {author && <div className='text-sm uppercase'>{author.name}</div>}
+      {author && <div className='text-sm text-black/80'>By {author.name}</div>}
     </div>
     </div>
   )

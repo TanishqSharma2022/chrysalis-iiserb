@@ -56,6 +56,11 @@ export const CategoryRef = groq`
 *[_type == 'category' && name == $categoryName][0]._id
 `
 
+export const allEditions = groq`
+*[_type == "editions"] | order(date desc, _updatedAt desc) `
+
+
+
 export interface Author {
   name?: string
   picture?: any
