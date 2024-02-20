@@ -20,7 +20,7 @@ export default function AuthorAvatar(props: Author) {
           alt={picture?.alt ?? name}
         />
       </div>
-      <div className="text-md font-bold text-balance">{name}</div>
+      <div className="text-sm md:text-md font-bold text-balance">{name}</div>
     </div>
   )
 }

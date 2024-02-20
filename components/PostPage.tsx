@@ -32,6 +32,7 @@ export default function PostPage(props: PostPageProps) {
 
   return (
     <>
+    
       <PostPageHead settings={settings} post={post} />
 
       <Layout preview={preview} loading={loading}>

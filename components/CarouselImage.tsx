@@ -19,7 +19,7 @@ export default function CarouselImage(props: CoverImageProps) {
       })}
     >
       <Image
-        className="max-h-[90vh] min-h-[60vh]  aspect-[16/9] shadow-lg"
+        className=" max-h-[80vh]  aspect-[16/9] shadow-lg"
         width={1500}
         height={1000}
         alt=""

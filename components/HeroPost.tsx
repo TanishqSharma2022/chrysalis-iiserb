@@ -31,8 +31,8 @@ export default function HeroPost(
               {title || 'Untitled'}
             </Link>
           </h3>
-          <div className='flex gap-6  items-center'>
-          <div className=" text-md font-semibold">
+          <div className='flex gap-3 md:gap-6  items-center'>
+          <div className="text-sm md:text-md font-semibold">
             <Date dateString={date} />
             
           </div>

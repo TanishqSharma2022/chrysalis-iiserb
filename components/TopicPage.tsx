@@ -19,7 +19,6 @@ export interface IndexPageProps {
 export default function TopicPage(props: IndexPageProps) {
   const { preview, loading, posts, settings } = props
   const [heroPost, ...morePosts] = posts || []
-  const { title = demo.title, description = demo.description } = settings || {}
 
   return (
     <>

@@ -57,7 +57,14 @@ export const CategoryRef = groq`
 `
 
 export const allEditions = groq`
-*[_type == "editions"] | order(date desc, _updatedAt desc) `
+*[_type == "editions"] | order(date desc, _updatedAt desc){
+  _id,
+  title,
+  description,
+  coverImage, 
+  File,
+  "pdf_download_url": File.asset -> url
+}`
 
 
 
@@ -92,6 +99,11 @@ export interface Settings {
 }
 
 export interface Editions {
-  title: string,
-  description?: string,
-}
+
+    _id: string,
+    title : string,
+    description : string,
+    coverImage?: any, 
+    File?: any,
+    download_url: string
+  }

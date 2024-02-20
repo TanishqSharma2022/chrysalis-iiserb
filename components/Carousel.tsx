@@ -9,7 +9,17 @@ import 'css/base.css'
 
 export function Carousel({posts}) {
   const [emblaRef] = useEmblaCarousel()
-  const OPTIONS: EmblaOptionsType = { dragFree: false, loop: true}
+  const OPTIONS: EmblaOptionsType = { dragFree: false, loop: true, breakpoints:{
+    768: {
+      slidesToScroll: 2,
+
+    },
+    1024: {
+      slidesToScroll: 3,
+
+    }
+  
+  }}
   return (
     <section className="border p-0 ">
       <EmblaCarousel posts={posts} options={OPTIONS} />

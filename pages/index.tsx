@@ -1,15 +1,16 @@
 import IndexPage from 'components/IndexPage'
+import Navbar from 'components/Navbar'
 import PreviewIndexPage from 'components/PreviewIndexPage'
 import { readToken } from 'lib/sanity.api'
 import { getAllEditions, getAllPosts, getClient, getSettings } from 'lib/sanity.client'
-import { Post, Settings } from 'lib/sanity.queries'
+import { Editions, Post, Settings } from 'lib/sanity.queries'
 import { GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
 
 interface PageProps extends SharedPageProps {
   posts: Post[]
   settings: Settings,
-  editions: any
+  editions: Editions[]
 }
 
 interface Query {
@@ -17,12 +18,13 @@ interface Query {
 }
 
 export default function Page(props: PageProps) {
-  const { posts, settings, draftMode, editions } = props;
-  // if (draftMode) {
-  //   return <PreviewIndexPage posts={posts} settings={settings} />
-  // }
+  const { posts, settings, editions } = props;
 
-  return <IndexPage posts={posts} settings={settings} editions={editions} />
+  return (
+  <>
+      <Navbar posts={posts} />
+      <IndexPage posts={posts} settings={settings} editions={editions} />
+  </>)
 }
 
 export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {

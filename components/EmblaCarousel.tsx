@@ -65,7 +65,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container ">
           {posts.map((slide, index) => (
-            <div className="embla__slide border border-blue-500 w-[50%]" key={index}>
+            <div className="embla__slide max-w-[1000px]" key={index}>
               
               <div className="embla__parallax">
 
@@ -77,7 +77,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                     }),
                   }}
                 >
-                    <div className=" embla__parallax__img max-h-[60vh]  ">
+                    <div className=" embla__parallax__img   ">
                       <CarouselImage
                         slug={slide.slug}
                         title={slide.title}
@@ -87,19 +87,25 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
                         </div>
 
-                    <div className=" bg-black/60 backdrop-blur-12 w-full p-12 z-10  absolute bottom-[10%] text-white ">
+                    <div className="transition-all hover:bg-black/60 bg-gradient-to-t inset-0 from-black via-black/10 to-transparent backdrop-blur-12 w-full  z-10  absolute bottom-0 text-white ">
+                      <div className=' w-full h-full relative '>
+                     <div className='w-full absolute bottom-0 md:-bottom-[15%] hover:bottom-[5%] transition-all p-6 md:p-12'>
                       <Link
                         href={`/posts/${slide.slug}`}
-                        className='grid grid-cols-1 gap-6'
+                        className='grid grid-cols-1 gap-6  transition-all '
                         >
                           <h1
-                        className="text-md md:text-3xl font-bold hover:underline md:leading-[10px]"
+                        className="text-md md:text-3xl font-bold hover:underline "
                         
                       >
                         {slide.title}
                         </h1>
-                        By {slide.author.name}
+                        <p className='md:block hidden italic'>By {slide.author.name}</p>
+                        <p className='md:block hidden'>{slide.excerpt}</p>
                       </Link>
+                      </div>
+                      </div>
+
                     </div>
                   
                 </div>
