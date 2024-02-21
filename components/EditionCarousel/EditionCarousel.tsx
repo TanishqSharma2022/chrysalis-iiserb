@@ -20,7 +20,7 @@ export function EditionCarousel({ coverImage }) {
       <Carousel opts={{loop: true}} className='p-0'>
         <CarouselContent>
           {coverImage.map((image: any, index: number) => (
-            <CarouselItem className="md:basis-1/3 flex flex-col justify-center ">
+            <CarouselItem className="md:basis-1/3 flex flex-col justify-center" key={index}>
               <Image
                 className="mx-auto drop-shadow-sm hover:drop-shadow-lg  "
                 width={200}

@@ -1,6 +1,5 @@
 
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -79,6 +78,14 @@
   }
 }
 
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/fonts/HelveticaNeueLTProBd.otf') format('truetype');
+  /* You can include multiple src declarations for different font formats */
+}
+
+
 :root, body{
-  font-family: 'Inter';
+  overflow-x: hidden;
+  font-family: 'Helvetica';
 }

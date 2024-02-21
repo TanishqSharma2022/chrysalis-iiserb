@@ -2,7 +2,7 @@ import IndexPage from 'components/IndexPage'
 import Navbar from 'components/Navbar'
 import PreviewIndexPage from 'components/PreviewIndexPage'
 import { readToken } from 'lib/sanity.api'
-import { getAllEditions, getAllPosts, getClient, getSettings } from 'lib/sanity.client'
+import { getAllEditions, getAllPosts, getAllPostsCategories, getClient, getSettings } from 'lib/sanity.client'
 import { Editions, Post, Settings } from 'lib/sanity.queries'
 import { GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
@@ -10,7 +10,8 @@ import type { SharedPageProps } from 'pages/_app'
 interface PageProps extends SharedPageProps {
   posts: Post[]
   settings: Settings,
-  editions: Editions[]
+  editions: Editions[],
+  categories: any
 }
 
 interface Query {
@@ -18,12 +19,12 @@ interface Query {
 }
 
 export default function Page(props: PageProps) {
-  const { posts, settings, editions } = props;
+  const { posts, settings, editions, categories } = props;
 
   return (
   <>
       <Navbar posts={posts} />
-      <IndexPage posts={posts} settings={settings} editions={editions} />
+      <IndexPage posts={posts} settings={settings} editions={editions} categories={categories} />
   </>)
 }
 
@@ -31,10 +32,11 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   const { draftMode = false } = ctx
   const client = getClient(draftMode ? { token: readToken } : undefined)
 
-  const [settings, posts = [], editions] = await Promise.all([
+  const [settings, posts = [], editions, categories] = await Promise.all([
     getSettings(client),
     getAllPosts(client),
-    getAllEditions(client)
+    getAllEditions(client),
+    getAllPostsCategories()
   ])
 
   return {
@@ -43,7 +45,8 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
       settings,
       draftMode,
       token: draftMode ? readToken : '',
-      editions
+      editions,
+      categories
     },
   }
 }

@@ -48,7 +48,8 @@ export const postsByTypeQuery = `
 `
 export const postCategoriesQuery = groq`
 *[_type == "category"][]{ 
-  name
+  name,
+  coverImage
 }
 `
 
@@ -74,7 +75,8 @@ export interface Author {
 }
 
 export interface Category {
-  name?: string
+  name?: string,
+  coverImage?: any
 }
 
 export interface Post {
