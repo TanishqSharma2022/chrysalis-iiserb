@@ -22,9 +22,6 @@ interface Query {
 
 export default function EditionsRoute(props: PageProps) {
     const { settings, editions, posts } = props
-    // if (draftMode) {
-    //   return <PreviewIndexPage posts={posts} settings={settings} />
-    // }
   
     return <EditionsPage settings={settings} editions={editions} posts={posts}/>
   }

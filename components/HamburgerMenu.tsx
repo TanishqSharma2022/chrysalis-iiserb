@@ -66,7 +66,7 @@ export default function HamburgerMenu(props: IAppProps) {
       >
         <div
           ref={menuBarRef}
-          className={`menu p-12 absolute overflow-x-hidden flex flex-col justify-center top-0 w-full -right-[1000px] h-[100vh] bg-blue-700 z-50 md:w-[60%]
+          className={`menu p-12 absolute overflow-x-hidden flex flex-col justify-center top-0 w-full -right-[1000px] h-[100vh] bg-blue-500 z-50 md:w-[60%]
             `}
         >
           <ul className="text-white font-bold text-5xl grid gap-8  ">

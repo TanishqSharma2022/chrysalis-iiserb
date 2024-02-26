@@ -1,7 +1,9 @@
+import Navbar from 'components/Navbar'
 import PostPage from 'components/PostPage'
 import PreviewPostPage from 'components/PreviewPostPage'
 import { readToken } from 'lib/sanity.api'
 import {
+  getAllPosts,
   getAllPostsSlugs,
   getClient,
   getPostAndMoreStories,
@@ -15,6 +17,7 @@ interface PageProps extends SharedPageProps {
   post: Post
   morePosts: Post[]
   settings?: Settings
+  allPosts: any
 }
 
 interface Query {
@@ -22,7 +25,7 @@ interface Query {
 }
 
 export default function ProjectSlugRoute(props: PageProps) {
-  const { settings, post, morePosts, draftMode } = props
+  const { settings, post, morePosts, draftMode, allPosts } = props
 
   if (draftMode) {
     return (
@@ -30,16 +33,23 @@ export default function ProjectSlugRoute(props: PageProps) {
     )
   }
 
-  return <PostPage post={post} morePosts={morePosts} settings={settings} />
+  return(
+    <>
+    <Navbar posts={allPosts} />
+   <PostPage post={post} morePosts={morePosts} settings={settings} />
+   </>
+   )
 }
 
 export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   const { draftMode = false, params = {} } = ctx
   const client = getClient(draftMode ? { token: readToken } : undefined)
 
-  const [settings, { post, morePosts }] = await Promise.all([
+  const [settings, allPosts, { post, morePosts}] = await Promise.all([
     getSettings(client),
+    getAllPosts(client),
     getPostAndMoreStories(client, params.slug),
+
   ])
 
   if (!post) {
@@ -50,6 +60,7 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
 
   return {
     props: {
+      allPosts,
       post,
       morePosts,
       settings,
