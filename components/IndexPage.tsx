@@ -58,12 +58,12 @@ export default function IndexPage(props: IndexPageProps) {
       </Layout>
       {/* Editions Sections */}
       <Layout preview={preview} loading={loading}>
-          <div className="w-full bg-[url(https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=2600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover border h-[30vh]">
+          <div className="w-full mt-24 bg-[url(https://images.unsplash.com/photo-1597773150796-e5c14ebecbf5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover border h-[30vh]">
           </div>
           <div className='md:px-12'>
           <div className=' -mt-24 bg-white shadow-lg mx-auto text-center'>
             <h1 className=' py-12 font-bold text-4xl md:text-6xl'>Our Editions</h1>
-            <div className='md:p-12 border flex'>
+            <div className='md:p-12  flex'>
               <EditionCarousel coverImage={editions} />
             </div>
             </div>
@@ -74,13 +74,13 @@ export default function IndexPage(props: IndexPageProps) {
         <div className='w-full md:p-24 p-8'>
         <h1 className='font-bold mt-12 text-5xl '>Topic Wise Blogs</h1>
         <Separator />
-        <div className='w-full mt-12 grid grid-cols-1 md:grid-cols-4 gap-6 '>
+        <div className='w-full mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 '>
 
-            {categories.map((category:any, index) => {
+            {categories.map((category:any, index:number) => {
               return(
-              <Link href={`/topic/${category.name}`} key={index} className=' relative border hover:scale-110 grid place-items-center justify-center shadow-lg'>
+              <Link href={`/topic/${category.name}`} key={index} className='category relative   hover:scale-110 transition-all grid place-items-center justify-center shadow-lg'>
                  <Image
-                className="mx-auto drop-shadow-sm hover:drop-shadow-lg  "
+                className="mx-auto drop-shadow-sm rounded-xl hover:drop-shadow-lg  "
                 width={400}
                 height={100}
                 alt=""
@@ -89,8 +89,8 @@ export default function IndexPage(props: IndexPageProps) {
                   .width(800)
                   ?.url()}
               />
-                <div className="absolute w-full h-full bg-black/40 hover:bg-black/60 transition-all text-xl hover:text-3xl cursor-pointer text-white flex items-center justify-center">
-                <h1 className='p-6 font-bold '>{category.name}</h1>
+                <div className="absolute w-full h-full md:opacity-0 overlay bg-black/40 hover:bg-black/60 transition-all text-lg hover:text-2xl cursor-pointer text-white flex items-center justify-center">
+                <h1 className='p-6 font-bold  '>{category.name}</h1>
 
 
                 </div>

@@ -18,15 +18,18 @@ interface Query {
   [key: string]: string
 }
 
-export default function Page(props: PageProps) {
+export default function Members(props: PageProps) {
   const { posts, settings, editions, categories } = props;
 
   return (
-  <>
+    <>
       <Navbar posts={posts} />
-      <IndexPage posts={posts} settings={settings} editions={editions} categories={categories} />
-  </>)
+      <IndexPage settings={settings} posts={posts} editions={editions} categories={categories} />
+    </>
+    )
 }
+
+
 
 export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   const { draftMode = false } = ctx

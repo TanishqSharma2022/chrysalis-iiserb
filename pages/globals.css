@@ -89,3 +89,23 @@
   overflow-x: hidden;
   font-family: 'Helvetica';
 }
+
+
+.Carousel_Label{
+  bottom: -15%;
+  text-align: top;
+}
+
+.Carousel_Container:hover .Carousel_Label{
+  bottom: 0;
+}
+
+.category:hover .overlay{
+  opacity: 1;
+}
+
+
+.menu_list li{
+  overflow:hidden;
+  opacity: 1;
+}

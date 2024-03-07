@@ -31,7 +31,7 @@ export default function EditionsPage(props: IndexPageProps) {
                 <Layout preview={preview} loading={loading}>
                 <div className={styles.editions}>
                     {editions.map((image: any, index: number) => (
-                        <a target='_blank' href={image.pdf_download_url} className='cursor-pointer mt-4 hover:underline'>
+                        <a key={index} target='_blank' href={image.pdf_download_url} className='cursor-pointer mt-4 hover:underline'>
                         <div key={image.title} className="md:basis-1/3 flex flex-col justify-center">
                         <Image
                             className="mx-auto drop-shadow-sm hover:drop-shadow-lg  "

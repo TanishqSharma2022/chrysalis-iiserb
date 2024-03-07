@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import {
-  Command,
   CommandDialog,
   CommandEmpty,
   CommandGroup,
@@ -8,15 +7,14 @@ import {
   CommandList,
   CommandSeparator,
 } from 'components/ui/command'
-import { Copy, Search } from 'lucide-react'
+import {  Search } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { urlForImage } from 'lib/sanity.image'
-import { CommandInput } from 'cmdk'
 
 export function Example({ posts }) {
   const [open, setOpen] = useState(false)
-  const [searchResults, setSearchResults] = useState(posts)
+  const [searchResults, setSearchResults] = useState([])
   const [searchQuery, setSearchQuery] = useState('')
 
   const handleSearchButtonClick = () => {
@@ -34,43 +32,43 @@ export function Example({ posts }) {
       const filteredPosts = posts.filter(
         (post) =>
           post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          post.category.name.toLowerCase().includes(searchQuery.toLowerCase()),
+          post.category?.name.toLowerCase().includes(searchQuery.toLowerCase()),
       )
       setSearchResults(filteredPosts)
     }
   }, [searchQuery, posts])
 
   const renderSearchResults = () => {
-    if (searchResults.length === 0 && searchQuery.trim() !== '') {
+    if (searchResults?.length === 0 && searchQuery.trim() !== '') {
       return <CommandEmpty>No results found.</CommandEmpty>
     }
 
-    if (searchResults.length === 0) {
-      return posts.slice(0, 3).map((post) => (
-        <Link key={post.slug} href={`/posts/${post.slug}`}>
-          <CommandItem className=" " key={post.slug}>
-            <div className="truncate ... w-[80%] flex items-center gap-2">
-              <div className="w-10 h-10 aspect-square">
-                <Image
-                  className="h-auto w-full"
-                  width={100}
-                  height={100}
-                  alt=""
-                  src={urlForImage(post.coverImage?.asset._ref)
-                    .height(100)
-                    .width(100)
-                    .url()}
-                />
-              </div>
-              <h1>{post.title}</h1>
-            </div>
-            <Link href={`/topic/${post.category.name}`}>
-              {post.category.name}
-            </Link>
-          </CommandItem>
-        </Link>
-      ))
-    }
+    // if (searchResults.length === 0) {
+    //   return posts.slice(0, 3).map((post) => (
+    //     <Link key={post.slug} href={`/posts/${post.slug}`}>
+    //       <CommandItem className=" " key={post.slug}>
+    //         <div className="truncate ... w-[80%] flex items-center gap-2">
+    //           <div className="w-10 h-10 aspect-square">
+    //             <Image
+    //               className="h-auto w-full"
+    //               width={100}
+    //               height={100}
+    //               alt=""
+    //               src={urlForImage(post.coverImage?.asset._ref)
+    //                 .height(100)
+    //                 .width(100)
+    //                 .url()}
+    //             />
+    //           </div>
+    //           <h1>{post.title}</h1>
+    //         </div>
+    //         <Link href={`/topic/${post.category.name}`}>
+    //           {post.category.name}
+    //         </Link>
+    //       </CommandItem>
+    //     </Link>
+    //   ))
+    // }
 
     return searchResults.map((post) => (
       <Link key={post.slug} href={`/posts/${post.slug}`}>
@@ -90,10 +88,11 @@ export function Example({ posts }) {
             </div>
             <h1>{post.title}</h1>
           </div>
-          <Link href={`/topic/${post.category.name}`}>
-            {post.category.name}
+          <Link href={`/topic/${post.category?.name}`}>
+            {post.category?.name}
           </Link>
         </CommandItem>
+        <CommandSeparator />
       </Link>
     ))
   }
@@ -101,7 +100,7 @@ export function Example({ posts }) {
   return (
     <>
       <button onClick={handleSearchButtonClick}>
-        <Search size={30} />
+        <Search className='md:size-[30px] hover:scale-110 opacity-50 hover:opacity-100 transition-all' />
       </button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>

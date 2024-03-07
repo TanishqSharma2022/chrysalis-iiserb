@@ -19,14 +19,14 @@ export default function HeroPost(
       <div className="mb-20 md:mb-16 md:grid  md:gap-x-16 lg:gap-x-8">
         <div>
         {category && (
-            <div className="mb-2 text-sm md:text-lg font-bold uppercase text-blue-500 underline underline-offset-2">
-              <Link href={`/topic/${category.name}`}>
+            <div className="mb-2 text-sm  font-bold uppercase  underline-offset-2">
+              <Link href={`/topic/${category.name}`} className=" text-white p-2  bg-gradient-to-r from-black to-blue-500 ">
                     {category.name}
               </Link>
             </div>
           
           )}
-          <h3 className="mb-4 text-2xl leading-tight lg:text-3xl text-balance font-bold">
+          <h3 className="mb-4 mt-4 text-2xl leading-tight lg:text-5xl text-balance font-bold">
             <Link href={`/posts/${slug}`} className="hover:underline">
               {title || 'Untitled'}
             </Link>
