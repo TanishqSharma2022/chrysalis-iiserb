@@ -11,7 +11,7 @@ import Image from 'next/image'
 import { urlForImage } from 'lib/sanity.image'
 import Link from 'next/link'
 import { Separator } from "components/ui/separator"
-
+import { EditionCard } from 'components/edition_card/EditionCard'
 
 
 export interface IndexPageProps {
@@ -36,7 +36,7 @@ export default function IndexPage(props: IndexPageProps) {
       <Carousel posts={posts} />
       {/* Post Previews */}
       <Layout preview={preview} loading={loading}>
-          <div className=' mx-auto w-full mt-12 md:mt-24 px-6 md:px-24 md:grid md:grid-cols-6 md:gap-12 place-items-start justify-center'>
+          <div className=' mx-auto w-full mt-12 md:mt-24 px-6 md:px-24 md:grid md:grid-cols-6 md:gap-12   justify-center'>
             <div className='col-span-4'>
           {heroPost && (
             <HeroPost
@@ -61,8 +61,8 @@ export default function IndexPage(props: IndexPageProps) {
           <div className="w-full mt-24 bg-[url(https://images.unsplash.com/photo-1597773150796-e5c14ebecbf5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover border h-[30vh]">
           </div>
           <div className='md:px-12'>
-          <div className=' -mt-24 bg-white shadow-lg mx-auto text-center'>
-            <h1 className=' py-12 font-bold text-4xl md:text-6xl'>Our Editions</h1>
+          <div className=' shadow-lg mx-auto text-center border -mt-24 bg-white'>
+            <h1 className=' mt-24 font-bold text-4xl md:text-6xl'>Our Editions</h1>
             <div className='md:p-12  flex'>
               <EditionCarousel coverImage={editions} />
             </div>
@@ -89,7 +89,7 @@ export default function IndexPage(props: IndexPageProps) {
                   .width(800)
                   ?.url()}
               />
-                <div className="absolute w-full h-full md:opacity-0 overlay bg-black/40 hover:bg-black/60 transition-all text-lg hover:text-2xl cursor-pointer text-white flex items-center justify-center">
+                <div className="absolute w-full h-full md:opacity-0 overlay bg-black/40 hover:bg-black/60 rounded-xl transition-all text-lg hover:text-2xl cursor-pointer text-white flex items-center justify-center">
                 <h1 className='p-6 font-bold  '>{category.name}</h1>
 
 
@@ -99,6 +99,10 @@ export default function IndexPage(props: IndexPageProps) {
             })}
         </div>
         </div>
+      </Layout>
+      <Layout  preview={preview} loading={loading}>
+            {/* <EditionCard /> */}
+            <div></div>
       </Layout>
 
       

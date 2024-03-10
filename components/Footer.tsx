@@ -2,25 +2,26 @@ import { Separator } from "components/ui/separator"
 
 export default function Footer(){
     return(
-<div className="w-full min-h-screen flex flex-col gap-12 p-12 md:p-24 items-center justify-center bg-black">
+<div className="w-full relative  flex flex-col gap-12 p-12 md:p-24 items-center justify-center bg-black">
+    <div className="absolute h-96 w-96 bg-gradient-to-r from-violet-200 to-sky-200 blur-[200px] -left-2 bottom-0"></div>
 <div className="flex md:flex-row flex-col items-center  gap-12">
         <div className="">
-        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Subscribe to our newsletter.</h2>
-        <p className="mt-4 text-lg leading-8 text-white">Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit quis. Duis tempor incididunt dolore.</p>
+        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl ">Subscribe to our newsletter.</h2>
+        <p className="mt-4 text-lg leading-8 text-white">You can subscribe to our newsletter to get the latest updates and blogs straight into your mail.</p>
         <div className="mt-6 flex max-w-md gap-x-4">
           <label htmlFor="email-address" className="sr-only">Email address</label>
           <input id="email-address" name="email" type="email"  required className=" min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-lg ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" placeholder="Enter your email" />
-          <button type="submit" className="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Subscribe</button>
+          <button type="submit" className="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-gradient-to-b from-sky-500 to-blue-600">Subscribe</button>
         </div>
       </div>
         <div className="md:w-2/3 w-full px-4 text-white flex flex-col">
-            <div className="w-full text-5xl font-bold">
+            <div className="w-full text-4xl font-bold">
                 <h1 className="w-full md:w-2/3 font-bold">Contribute to us.</h1>
             </div>
-            <div className="flex mt-8 flex-col gap-12  md:justify-between">
-                <p className="w-full md:w-2/3 text-gray-400">To ensure that all Wikipedia content is verifiable, anyone may question an uncited claim. If your work has been tagged</p>
+            <div className="flex mt-4 flex-col gap-12  md:justify-between">
+                <p className="w-full md:w-2/3 text-gray-400">You can contribute to this project. Contact us through email or whatsapp.</p>
                 <div className="w-44 pt-6 md:pt-0">
-                    <a className="bg-blue-600 justify-center text-center rounded-lg shadow px-10 py-3 flex items-center">Contact Us</a>
+                    <a className="bg-blue-600 bg-gradient-to-b from-sky-500 to-blue-600 justify-center text-center rounded-lg shadow px-10 py-3 flex items-center">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -32,14 +33,14 @@ export default function Footer(){
 
 
 
-            <div className="flex flex-col gap-12 ">
-                <div className="flex mt-24 mb-12 flex-row justify-between items-center gap-6 ">
+            <div className="flex flex-col gap-6 ">
+                <div className="flex mt-12  flex-row justify-between items-center gap-6 ">
                     <div className="italic mr-12 font-serif text-5xl text-white">
                       Chrysalis
                     </div>
                     <a className="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">About</a>
-                    <a className="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">Services</a>
-                    <a className="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">Why us</a>
+                    <a className="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">Team</a>
+                    <a className="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">Editions</a>
                     <a className="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">Contact</a>
                     <div className="flex flex-row space-x-8 items-center justify-between">
                         <a>
@@ -62,7 +63,7 @@ export default function Footer(){
                     </div>
                 </div>
                 <hr className="border-gray-600"/>
-                <p className="w-full text-center my-12 text-gray-600">Copyright © 2020 Besnik Creative</p>
+                <p className="w-full text-center my-2 text-gray-600">Copyright © 2023 Chrysalis IISERB</p>
             </div>
             </div>
     )

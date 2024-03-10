@@ -1,8 +1,0 @@
-li:hover{
-    cursor:pointer;
-    transform: translateX(20px);
-}
-li{
-    transition:transform 200ms ease-in-out;
-
-}
