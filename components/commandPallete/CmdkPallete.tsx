@@ -100,7 +100,7 @@ export function Example({ posts }) {
   return (
     <>
       <button onClick={handleSearchButtonClick}>
-        <Search className='md:size-[30px] hover:scale-110 opacity-50 hover:opacity-100 transition-all' />
+        <Search className='md:size-[30px] hover:scale-110 opacity-50 hover:opacity-100 transition-all btn-search' />
       </button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>

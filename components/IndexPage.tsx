@@ -21,7 +21,6 @@ export interface IndexPageProps {
   settings: Settings,
   editions: Editions[],
   categories: any
-
 }
 
 

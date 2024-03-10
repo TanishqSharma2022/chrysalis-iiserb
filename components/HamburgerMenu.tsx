@@ -101,7 +101,7 @@ export default function HamburgerMenu(props: IAppProps) {
   return (
     <div ref={container} className="overflow-x-hidden  transition-all z-10">
       <button className={` scale-x-[-1] mr-2 md:mr-12 z-50 cursor-pointer relative  md:size-[30px]  opacity-50 hover:opacity-100 transition-all`} onClick={onClick} ref={menuOpenRef}>
-      <svg width='30' height='30' viewBox='0 0 24 24' color='red'>
+      <svg width='30' height='30' viewBox='0 0 24 24' color='red' className='btn-hamburger-menu'>
         <motion.path
           {...path01Variants.closed}
           animate={path01Controls}
