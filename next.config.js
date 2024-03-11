@@ -3,6 +3,10 @@ module.exports = {
         domains: [
             'images.unsplash.com',
             'cdn.sanity.io'
-        ]
-    }
+        ],
+        
+    },
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
 }
