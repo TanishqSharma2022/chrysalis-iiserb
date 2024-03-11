@@ -15,12 +15,15 @@ export default function PreviewIndexPage(props: IndexPageProps) {
   )
 
   return (
-    <IndexPage
-      preview
-      loading={loadingPosts || loadingSettings}
-      posts={posts || []}
-      settings={settings || {}}
-      editions
-    />
+    // <IndexPage
+    //   preview
+    //   loading={loadingPosts || loadingSettings}
+    //   posts={posts || []}
+    //   settings={settings || {}}
+    //   editions
+    // />
+    <div>
+      
+    </div>
   )
 }
