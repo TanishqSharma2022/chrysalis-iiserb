@@ -61,10 +61,10 @@ export default function IndexPage(props: IndexPageProps) {
       </Layout>
       {/* Editions Sections */}
       <Layout preview={preview} loading={loading}>
-          <div className="w-full bg-gradient-to-br from-sky-300 to-blue-700 bg-cover h-[50vh] bg-fixed">
+          <div className="w-full bg-gradient-to-br from-sky-300 to-blue-700 bg-cover min-h-[15vh] lg:h-[50vh] bg-fixed">
           </div>
           <div className='md:px-12 rounded-xl  min-h-[65rem]'>
-          <div className=' shadow-lg md:py-24 py-12 p-2 md:p-24 text-center -mt-72 bg-white rounded-2xl h-[40rem] md:h-[60rem]'>
+          <div className=' shadow-lg md:py-24 py-12 p-2 md:p-24 text-center -mt-48 lg:-mt-72 bg-white rounded-2xl h-[40rem] md:h-[60rem]'>
               <h1 className=' font-bold  font-sfheavy text-6xl bg-gradient-to-br from-sky-500 to-blue-800 bg-clip-text text-transparent'>Our Editions</h1>
               <TabsDemo editions={editions} />
             </div>

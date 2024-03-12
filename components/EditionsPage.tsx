@@ -23,7 +23,7 @@ export default function EditionsPage(props: IndexPageProps) {
       <PageLayout>
       <IndexPageHead settings={settings} />
       <Layout preview={preview} loading={loading}>
-          <div className="w-full bg-gradient-to-t from-blue-200 to-sky-400 bg-cover  h-[30vh]">
+          <div className="w-full bg-gradient-to-t from-blue-200 to-sky-400 bg-cover md:h-[10vh]  lg:h-[30vh]">
           </div>
           <div className='md:px-12'>
           <div className=' -mt-24 bg-white shadow-lg mx-auto text-center'>

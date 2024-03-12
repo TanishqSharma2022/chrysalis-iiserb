@@ -1,9 +1,11 @@
+import withPlaiceholder from "@plaiceholder/next";
+
 /** @type {import('next').NextConfig} */
 const config = {
   images: {
     remotePatterns: [
       { hostname: 'cdn.sanity.io' },
-      { hostname: 'source.unsplash.com' },
+      { hostname: '**.unsplash.com' },
     ],
   },
   typescript: {
@@ -16,4 +18,4 @@ const config = {
   },
 }
 
-export default config
+export default withPlaiceholder(config);

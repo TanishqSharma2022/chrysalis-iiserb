@@ -29,7 +29,7 @@ const team = () => {
 
 
 <img src="https://bst.icons8.com/wp-content/themes/icons8/app/uploads/2019/10/digital-illustration-teamwork.png" 
-    className=' brightness-20 opacity-25 top-12 -left-24  fixed z-[0]' />
+    className='  opacity-[0.1] top-12 -left-24  fixed z-[0]' />
     <div className='min-h-screen font-sfheavy w-full grid items-center z-[10] justify-center p-24'>
     <h1 className='font-bold text-center text-5xl md:text-8xl z-[10]'>Our Team</h1>
 

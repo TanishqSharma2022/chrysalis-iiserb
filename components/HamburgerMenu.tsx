@@ -29,27 +29,6 @@ export default function HamburgerMenu(props: IAppProps) {
   const menuBarRef = useRef(null)
   const menuOverlayRef = useRef(null)
 
-  // useGSAP(
-  //   (context, contextSafe) => {
-  //     const handleMenuOpen = contextSafe(() => {
-  //       gsap.to(menuBarRef.current, { right: 0 })
-        
-  //     })
-  //     const handleMenuClose = contextSafe(() => {
-  //       gsap.to(menuBarRef.current, { right: -1000 })
-   
-  //     })
-
-  //     menuOpenRef.current.addEventListener('click', handleMenuOpen)
-  //     // menuCloseRef.current.addEventListener('click', handleMenuClose)
-
-  //     return () => {
-  //       menuOpenRef.current.removeEventListener('click', handleMenuOpen)
-  //       // menuCloseRef.current.removeEventListener('click', handleMenuClose)
-  //     }
-  //   },
-  //   { scope: container },
-  // )
 
 
 
@@ -79,11 +58,11 @@ export default function HamburgerMenu(props: IAppProps) {
       path01Controls.start(path01Variants.open);
       path02Controls.start(path02Variants.open);
       gsap.to(menuOverlayRef.current, { opacity: 1, visibility: 'visible',});
-      gsap.to(menuBarRef.current, { right: 0 , delay: 0.5})
+      gsap.to(menuBarRef.current, { right: 0})
       gsap.fromTo(
         menuBarRef.current.querySelectorAll('.list-items'),
-        { delay: 0.5,opacity: 0, y: 150 },
-        { delay: 0.5,opacity: 1, y: 0, stagger: 0.2, duration: 0.5, ease: 'power4.inOut' }
+        { opacity: 0, y: 50, stiffness: 1000, velocity: -100},
+        { opacity: 1, y: 0, stagger: 0.2, duration: 0.5, ease: 'power4.inOut' }
       );
 
     } else {
@@ -94,7 +73,12 @@ export default function HamburgerMenu(props: IAppProps) {
         opacity: 0,
         visibility: 'hidden',
       });
-      gsap.to(menuBarRef.current, {delay: 0.5,  right: -1000 })
+      gsap.to(menuBarRef.current, { right: -1000 })
+      gsap.fromTo(
+        menuBarRef.current.querySelectorAll('.list-items'),
+        { opacity: 1, y: 0, stagger: 0.2, duration: 0.5, ease: 'power4.inOut' },
+        { opacity: 0, y: 50, stiffness: 1000, velocity: -100},
+      );
 
     }
   };
@@ -120,24 +104,25 @@ export default function HamburgerMenu(props: IAppProps) {
     </button>
     
       <div
-        className={` invisible bg-black/50 backdrop-blur-sm transition-all w-full  h-full z-[60] absolute top-0 left-0 overflow-hidden`}
+        className={` invisible bg-black/50 backdrop-blur-sm w-full  h-full z-[60] absolute top-0 left-0 overflow-hidden`}
         ref={menuOverlayRef}
       >
         <div
           ref={menuBarRef}
-          className={`menu p-12 absolute overflow-x-hidden flex flex-col justify-center top-0 w-full -right-[1000px] h-[100vh] bg-zinc-900 z-[60] md:w-[60%]
+          className={`menu p-12 absolute overflow-x-hidden flex flex-col justify-center top-0 w-full -right-[1000px] h-[100vh] bg-sky-700 z-[60] md:w-[60%]
             `}
         >
 
-          <div className='absolute h-96 w-96 blur-[300px] bg-gradient-to-tr from-pink-300 to-violet-400 top-12 right-12 '></div>
+          <div className='absolute h-96 w-96 blur-[300px] bg-gradient-to-tr from-pink-300 to-white top-12 right-12 '></div>
 
-        <button className='absolute top-24 left-12' >
-          <Home size={30} color='white' /></button>
+        <button className='absolute top-6 left-12' >
+          <Home size={30} color='white' />
+        </button>
           
           
           <ul className="text-white  text-3xl  grid gap-8 menu_list font-sfheavy ">
             
-            <li className="hover:translate-x-6 transition-all font-sfheavy ">
+            <li className=" transition-all font-sfheavy ">
               <Accordion type="single" collapsible>
                   <AccordionItem value="item-1">
                     <AccordionTrigger className='text-3xl '>
@@ -162,7 +147,7 @@ export default function HamburgerMenu(props: IAppProps) {
                 </Accordion>
 
             </li>
-            <li className='hover:translate-x-6 hover:underline font-sfheavy transition-all overflow-hidden'>
+            <li className=' hover:underline font-sfheavy transition-all overflow-hidden'>
               <Link href={'/editions'}>
                 <p className="list-items">Editions</p>
               </Link>

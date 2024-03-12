@@ -7,8 +7,8 @@ const members = [
     "Roles": "Editorial",
     "Bio": "So funny that being in the editorial team, I am unable to think of a short bio, waow.",
     "Picture": "/team/magazine/patel_pratyaksh_jagdishkumar.jpg",
-    "Instagram": "https://www.instagram.com/imjerusalem_?utm_source=qr&igsh=MXFqamluazI5M3B1ag==",
-    "LinkedIn": "https://www.linkedin.com/in/pratyaksh-patel-9360a7251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    "Instagram": "imjerusalem_?utm_source=qr&igsh=MXFqamluazI5M3B1ag==",
+    "LinkedIn": "pratyaksh-patel-9360a7251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
   },
   {
     "Username": "tanishq22@iiserb.ac.in",
@@ -17,8 +17,8 @@ const members = [
     "Roles": "Web Dev.",
     "Bio": "Introverted. Melophile. Awkward. Oh, Creator of this site.",
     "Picture": "/team/scicomm/tanishq_sharma.jpeg",
-    "Instagram": "https://www.instagram.com/itsmetanishq____/",
-    "LinkedIn": "https://www.linkedin.com/in/tanishq-sharma-iiser/"
+    "Instagram": "itsmetanishq____/",
+    "LinkedIn": "tanishq-sharma-iiser/"
   },
   {
     "Username": "aditya22@iiserb.ac.in",
@@ -28,7 +28,7 @@ const members = [
     "Bio": "Fellow Researcher and Data Scientist. Dedicated to science with a passion for discovery, research, and problem-solving.",
     "Picture": "/team/scicomm/aditya_dandhare.png",
     "Instagram": "adityad216",
-    "LinkedIn": "https://www.linkedin.com/in/aditya-dandhare-377b09294/"
+    "LinkedIn": "aditya-dandhare-377b09294/"
   },
   {
     "Username": "dhruvs23@iiserb.ac.in",
@@ -58,7 +58,7 @@ const members = [
     "Bio": "Hey! I'm Shamika, a third-year chemistry major at IISERB. I'm the co-chief editor of the Chrysalis magazine.",
     "Picture": "/team/magazine/tapasvi_shamika_vinesh.jpg",
     "Instagram": "@shameka_shayouka",
-    "LinkedIn": "https://in.linkedin.com/in/shamika-tapasvi-68377320b"
+    "LinkedIn": "shamika-tapasvi-68377320b"
   },
   {
     "Username": "adityap23@iiserb.ac.in",
@@ -68,7 +68,7 @@ const members = [
     "Bio": "Just a science enthusiast working to know this world a little better.",
     "Picture": "/team/scicomm/aditya_pandey.jpg",
     "Instagram": "aditya_pandey.y",
-    "LinkedIn": "https://www.linkedin.com/in/aditya-pandey-b03325291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    "LinkedIn": "aditya-pandey-b03325291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
   },
   {
     "Username": "mayanks23@iiserb.ac.in",
@@ -133,7 +133,7 @@ const members = [
     "Picture": "/team/magazine/raavee_tripathi.jpg",
 
     "Instagram": "@raavee.tripathi",
-    "LinkedIn": "https://www.linkedin.com/in/raavee-tripathi-b30365259/"
+    "LinkedIn": "raavee-tripathi-b30365259/"
   },
   {
     "Username": "raavee23@iiserb.ac.in",
@@ -143,7 +143,7 @@ const members = [
     "Bio": "Eat pasta, run fasta.",
     "Picture": "/team/scicomm/raavee_tripathi.jpg",
     "Instagram": "@raavee.tripathi",
-    "LinkedIn": "https://www.linkedin.com/in/raavee-tripathi-b30365259/"
+    "LinkedIn": "raavee-tripathi-b30365259/"
   },
   {
     "Username": "vinjamuri21@iiserb.ac.in",
@@ -173,7 +173,7 @@ const members = [
     "Bio": "Bio geek and amateur poet. Trying to make an impact on climate change awareness.",
     "Picture": "/team/magazine/sreejit_bakshi.jpg",
 
-    "LinkedIn": "https://www.linkedin.com/in/sreejit-bakshi-69588624b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    "LinkedIn": "sreejit-bakshi-69588624b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
   },
   {
     "Username": "kulkarni22@iiserb.ac.in",
@@ -181,10 +181,10 @@ const members = [
     "Team": "Sci-Comm",
     "Roles": "Podcast; Events & Outreach",
     "Bio": "Dedicated to creative thinking, writing, podcasting, and event coordination. Crafting compelling stories and memorable experiences with innovative flair.",
-    "Picture": "/team/scicomm/kulkarni_mrunal_pravin.png",
+    "Picture": "/team/scicomm/kulkarni_mrunal_pravin.jpg",
 
     "Instagram": "mrunal0823",
-    "LinkedIn": "https://www.linkedin.com/in/mrunal-kulkarni-ba05a3272"
+    "LinkedIn": "mrunal-kulkarni-ba05a3272"
   },
   {
     "Username": "malavade23@iiserb.ac.in",
@@ -194,8 +194,8 @@ const members = [
     "Bio": "Always loved to talk to different people!",
     "Picture": "/team/scicomm/malavade_aadee_shekhar.jpg",
 
-    "Instagram": "https://www.instagram.com/aadeensta?igsh=M3Jrbndud3F0d2oy",
-    "LinkedIn": "https://www.linkedin.com/in/aadee-malavade-354709270/"
+    "Instagram": "aadeensta?igsh=M3Jrbndud3F0d2oy",
+    "LinkedIn": "aadee-malavade-354709270/"
   },
   {
     "Username": "naini23@iiserb.ac.in",
@@ -204,7 +204,7 @@ const members = [
     "Roles": "Design",
     "Bio": "Is it the same sun which glows a little less at night? What the kid used to ponder- so as to flare again tomorrow.",
     "Picture": "/team/scicomm/naini_diwan.jpeg",
-    "LinkedIn": "https://www.linkedin.com/in/naini-diwan-963417290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    "LinkedIn": "naini-diwan-963417290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
   },
   {
     "Username": "tanvi22@iiserb.ac.in",
@@ -314,7 +314,7 @@ const members = [
     "Picture": "/team/scicomm/ishanya.jpg",
 
     "Instagram": 'i.s.h.a.n.y.a',
-    "LinkedIn": 'ishanya_iiserb'
+    "LinkedIn": 'ishanyaiiserb'
   },{
     "Username": "ishanya21@iiserb.ac.in",
     "Name": "Akshat Pandey",
@@ -324,7 +324,7 @@ const members = [
     "Picture": '/team/scicomm/akshat_pandey.jpg',
 
     "Instagram": 'akshatpandey47',
-    "LinkedIn": 'akshat-pandey-418299184'
+    "LinkedIn": 'akshat-pandey-418299184/'
   },
   {
     "Username": "prerna23@iiserb.ac.in",

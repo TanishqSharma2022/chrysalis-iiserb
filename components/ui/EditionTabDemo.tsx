@@ -22,7 +22,7 @@ export function TabsDemo({ editions }) {
             alt="dummy image"
             width="1000"
             height="1000"
-            className="object-cover h-full top-0 left-0 w-full absolute md:-bottom-48 brightness-[0.20]  z-[-1]   rounded-2xl"
+            className="object-cover h-full top-0 left-0 w-full absolute md:-bottom-48 brightness-[0.20]  z-[-1] rounded-2xl"
           />
 
           <p className="z-[0] font-sfheavy underline underline-offset-8 ">{edition.description}</p>
@@ -45,18 +45,18 @@ export function TabsDemo({ editions }) {
 
 const DummyContent = ({ coverImage, download }) => {
   return (
-    <div className="flex flex-col-reverse md:flex-row gap-2 place-items-start">
+    <div className="flex flex-col-reverse md:flex-row gap-2 place-items-center ">
       <Image
         src={urlForImage(coverImage?.asset._ref).height(900).width(600)?.url()}
         alt="dummy image"
         width="1000"
         height="1000"
-        className="object-cover w-full md:h-full md:p-12  md:ml-12 -mb-24   rounded-lg md:rounded-2xl"
+        className="object-cover  w-full md:w-[40%] lg:h-full lg:p-12  lg:ml-12 -mb-24    rounded-lg md:rounded-2xl"
       />
       <div className="p-6 flex flex-col items-start gap-4 md:mt-12">
-        <p className="font-serif md:flex hidden italic text-start"> Chief Editors' Note</p>
+        <p className="font-serif md:flex hidden italic md:text-xl lg:text-3xl text-start"> Chief Editors' Note</p>
         <Separator className='md:flex hidden' />
-        <p className="text-sm md:flex hidden font-sflight text-start italic mt-2">
+        <p className="text-xs lg:text-sm md:flex hidden font-sflight text-start italic mt-2">
           Dear Readers, Welcome to the latest edition of Chrysalis. As the
           Editors-in-Chief, we are delighted to present to you the culmination
           of months of hard work, dedication, and passion from our team as well
