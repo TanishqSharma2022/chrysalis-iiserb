@@ -99,33 +99,33 @@ export default function HamburgerMenu(props: IAppProps) {
     }
   };
   return (
-    <div ref={container} className="overflow-x-hidden  transition-all z-10">
-      <button className={` scale-x-[-1] mr-2 md:mr-12 z-50 cursor-pointer relative  md:size-[30px]  opacity-50 hover:opacity-100 transition-all`} onClick={onClick} ref={menuOpenRef}>
+    <div ref={container} className="overflow-x-hidden  transition-all z-[60]">
+      <button className={` scale-x-[-1] mr-2 md:mr-12 z-[70] cursor-pointer relative  md:size-[30px]  opacity-50 hover:opacity-100 transition-all`} onClick={onClick} ref={menuOpenRef}>
       <svg width='30' height='30' viewBox='0 0 24 24' color='red' className='btn-hamburger-menu'>
         <motion.path
           {...path01Variants.closed}
           animate={path01Controls}
-          transition={{ duration: 0.2 }}
-          stroke={isBOpen ? '#ffffff' : '#000000'}
+          transition={{ duration: 0.3 }}
+          stroke={ '#000000'}
           strokeWidth={2}
         />
         <motion.path
           {...path02Variants.closed}
           animate={path02Controls}
-          transition={{ duration: 0.2 }}
-          stroke={isBOpen ? '#ffffff' : '#000000'}
+          transition={{ duration: 0.3 }}
+          stroke={ '#000000'}
           strokeWidth={2}
         />
       </svg>
     </button>
     
       <div
-        className={` invisible bg-black/50 backdrop-blur-sm transition-all w-full  h-full z-[10] absolute top-0 left-0 overflow-hidden`}
+        className={` invisible bg-black/50 backdrop-blur-sm transition-all w-full  h-full z-[60] absolute top-0 left-0 overflow-hidden`}
         ref={menuOverlayRef}
       >
         <div
           ref={menuBarRef}
-          className={`menu p-12 absolute overflow-x-hidden flex flex-col justify-center top-0 w-full -right-[1000px] h-[100vh] bg-zinc-900 z-[10] md:w-[60%]
+          className={`menu p-12 absolute overflow-x-hidden flex flex-col justify-center top-0 w-full -right-[1000px] h-[100vh] bg-zinc-900 z-[60] md:w-[60%]
             `}
         >
 

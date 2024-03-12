@@ -89,8 +89,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
                         </div>
 
-                    <div className="transition-all Carousel_Container  hover:bg-black/60 bg-gradient-to-t inset-0 from-black via-black/50 to-transparent backdrop-blur-12 w-full z-[0]  absolute bottom-0 text-white ">
-                      <div className=' w-full h-full relative z-[10]'>
+                    <div className="transition-all Carousel_Container  hover:bg-black/60 bg-gradient-to-t inset-0 from-black via-black/50 to-transparent backdrop-blur-12 w-full   absolute bottom-0 text-white ">
+                      <div className=' w-full h-full relative '>
                      <div className='w-full md:w-[80%] absolute mb-2 Carousel_Label min-h-[50%] transition-all p-6 md:p-12'>
                       <Link href={`authors/${slide.author?.name}`} className="md:mb-1 text-[6px] md:text-xs font-sflight text-white/70 text-opacity-80">{slide.author?.name} • <time>16 Nov 2024</time></Link>
                       <Link

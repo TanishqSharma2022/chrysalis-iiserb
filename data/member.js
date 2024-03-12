@@ -26,7 +26,7 @@ const members = [
     "Team": "Sci-Comm",
     "Roles": "Events & Outreach",
     "Bio": "Fellow Researcher and Data Scientist. Dedicated to science with a passion for discovery, research, and problem-solving.",
-    "Picture": "/team/scicomm/aditya_dandhare.jpg",
+    "Picture": "/team/scicomm/aditya_dandhare.png",
     "Instagram": "adityad216",
     "LinkedIn": "https://www.linkedin.com/in/aditya-dandhare-377b09294/"
   },
@@ -36,7 +36,7 @@ const members = [
     "Team": "Sci-Comm",
     "Roles": "Web Dev.; Events & Outreach",
     "Bio": "Tech Enthusiast who loves to interact with people. Enjoys organizing events and making days memorable for others.",
-    "Picture": "/team/scicomm/dhruv_saluja.jpg",
+    "Picture": "/team/scicomm/dhruv_saluja.png",
     "Instagram": "dhruvsaluja04",
     "LinkedIn": "dhruvsaluja1221"
   },
@@ -181,7 +181,7 @@ const members = [
     "Team": "Sci-Comm",
     "Roles": "Podcast; Events & Outreach",
     "Bio": "Dedicated to creative thinking, writing, podcasting, and event coordination. Crafting compelling stories and memorable experiences with innovative flair.",
-    "Picture": "/team/scicomm/kulkarni_mrunal_pravin.jpg",
+    "Picture": "/team/scicomm/kulkarni_mrunal_pravin.png",
 
     "Instagram": "mrunal0823",
     "LinkedIn": "https://www.linkedin.com/in/mrunal-kulkarni-ba05a3272"
@@ -203,7 +203,7 @@ const members = [
     "Team": "Sci-Comm",
     "Roles": "Design",
     "Bio": "Is it the same sun which glows a little less at night? What the kid used to ponder- so as to flare again tomorrow.",
-    "Picture": "/team/scicomm/naini_diwan.jpg",
+    "Picture": "/team/scicomm/naini_diwan.jpeg",
     "LinkedIn": "https://www.linkedin.com/in/naini-diwan-963417290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
   },
   {

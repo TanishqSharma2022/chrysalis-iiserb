@@ -5,6 +5,7 @@ import type { Editions, Settings, Post } from 'lib/sanity.queries'
 import { urlForImage } from 'lib/sanity.image'
 import Image from 'next/image'
 import styles from './EditionsPage.module.css'
+import PageLayout from './PageLayout'
 
 export interface IndexPageProps {
   preview?: boolean
@@ -19,17 +20,16 @@ export default function EditionsPage(props: IndexPageProps) {
 
   return (
     <>
-      <Navbar posts={posts} />
+      <PageLayout>
       <IndexPageHead settings={settings} />
       <Layout preview={preview} loading={loading}>
-          <div className="w-full bg-[url(https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=2600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover border h-[30vh]">
+          <div className="w-full bg-gradient-to-t from-blue-200 to-sky-400 bg-cover  h-[30vh]">
           </div>
           <div className='md:px-12'>
           <div className=' -mt-24 bg-white shadow-lg mx-auto text-center'>
             <h1 className=' py-12 text-4xl md:text-6xl font-sfheavy'>Our Editions</h1>
-            <div className='md:p-12 border flex'>
-                <Layout preview={preview} loading={loading}>
-                <div className={styles.editions}>
+            <div className='md:p-12 flex'>
+                <div className="grid grid-cols-1 md:grid-cols-3 justify-center place-items-center w-full gap-12">
                     {editions.map((image: any, index: number) => (
                         <a key={index} target='_blank' href={image.pdf_download_url} className='cursor-pointer mt-4 hover:underline'>
                         <div key={image.title} className="md:basis-1/3 flex flex-col justify-center">
@@ -49,11 +49,12 @@ export default function EditionsPage(props: IndexPageProps) {
                         </a>
                     ))}
                 </div>
-                </Layout>
+
             </div>
             </div>
           </div>  
-      </Layout>       
+      </Layout>  
+      </PageLayout>     
     </>
   )
 }

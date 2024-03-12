@@ -23,7 +23,7 @@ const BrowseBlogs = ({ posts, categories }) => {
           </TabsList>
           <TabsContent
             value="Recents"
-            className="w-[100%] grid grid-cols-1 md:grid-cols-3 gap-8 mt-6" 
+            className="w-[100%] grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-8 mt-6" 
           >
             {posts.slice(0, 6).map((post, index) => {
               return (
@@ -38,7 +38,7 @@ const BrowseBlogs = ({ posts, categories }) => {
               <TabsContent
                 key={index}
                 value={category.name}
-                className="grid grid-cols-1 md:grid-cols-3 md:gap-8 "
+                className="grid grid-cols-1 md:grid-cols-3 gap-x-16  "
               >
                 {posts
                   .filter((post) => post.category.name == category.name)
