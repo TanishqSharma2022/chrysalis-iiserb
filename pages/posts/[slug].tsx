@@ -1,4 +1,5 @@
 import Navbar from 'components/Navbar'
+import PageLayout from 'components/PageLayout'
 import PostPage from 'components/PostPage'
 import PreviewPostPage from 'components/PreviewPostPage'
 import { readToken } from 'lib/sanity.api'
@@ -35,8 +36,9 @@ export default function ProjectSlugRoute(props: PageProps) {
 
   return(
     <>
-    <Navbar posts={allPosts} />
+    <PageLayout>
    <PostPage post={post} morePosts={morePosts} settings={settings} />
+   </PageLayout>
    </>
    )
 }

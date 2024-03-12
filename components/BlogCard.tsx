@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import AuthorAvatar from './AuthorAvatar'
 import Date from 'components/PostDate'
+import Link from 'next/link'
 
 
 const BlogCard = ({post}) => {
@@ -18,7 +19,8 @@ const BlogCard = ({post}) => {
         sizes="100vw"
       />
 
-        <h1 className=' font-sfheavy hover:underline text-lg mt-4'>{post.title}</h1>
+        <Link href={`/posts/${post.slug}`} target='_blank'>
+          <h1 className=' font-sfheavy hover:underline text-lg mt-4'>{post.title}</h1></Link>
         <p className=' text-sm font-sfregular truncate mt-4'>{post.excerpt}</p>
         <div className='mt-4 flex gap-4 text-xs items-center font-sflregular'>
         {post.author && <AuthorAvatar name={post.author.name} picture={post.author.picture} />} .
