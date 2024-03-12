@@ -26,7 +26,7 @@ export default function EditionsPage(props: IndexPageProps) {
           </div>
           <div className='md:px-12'>
           <div className=' -mt-24 bg-white shadow-lg mx-auto text-center'>
-            <h1 className=' py-12 font-bold text-4xl md:text-6xl'>Our Editions</h1>
+            <h1 className=' py-12 text-4xl md:text-6xl font-sfheavy'>Our Editions</h1>
             <div className='md:p-12 border flex'>
                 <Layout preview={preview} loading={loading}>
                 <div className={styles.editions}>

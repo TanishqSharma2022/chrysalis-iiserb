@@ -1,4 +1,5 @@
 import IndexPage from 'components/IndexPage'
+import PageLayout from 'components/PageLayout'
 import PreviewIndexPage from 'components/PreviewIndexPage'
 import TopicPage from 'components/TopicPage'
 import { readToken } from 'lib/sanity.api'
@@ -28,7 +29,11 @@ export default function ProjectSlugRoute(props: PageProps) {
   //   return <PreviewIndexPage posts={posts} settings={settings} />
   // }
 
-  return <TopicPage posts={posts} settings={settings} />
+  return (
+    <PageLayout>
+  <TopicPage posts={posts} settings={settings} />
+  </PageLayout>
+  )
 }
 
 export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {

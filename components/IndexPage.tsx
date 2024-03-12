@@ -12,6 +12,14 @@ import { urlForImage } from 'lib/sanity.image'
 import Link from 'next/link'
 import { Separator } from "components/ui/separator"
 import { EditionCard } from 'components/edition_card/EditionCard'
+import MainCarousel from './MainCarousel/MainCarousel'
+import '../css/embla.css'
+import '../css/base.css'
+import QuoteOfTheDay from './QuoteOfTheDay'
+import BrowseBlogs from './BrowseBlogs'
+import { TabsDemo } from './ui/EditionTabDemo'
+
+
 
 
 export interface IndexPageProps {
@@ -31,45 +39,39 @@ export default function IndexPage(props: IndexPageProps) {
   return (
     <div className='overflow-x-hidden'>
       <IndexPageHead settings={settings} />
+
+      {/* <MainCarousel slides={SLIDES} options={OPTIONS} /> */}
+
+
+
       {/* Carousel  */}
       <Carousel posts={posts} />
-      {/* Post Previews */}
-      <Layout preview={preview} loading={loading}>
-          <div className=' mx-auto w-full mt-12 md:mt-24 px-6 md:px-24 md:grid md:grid-cols-6 md:gap-12   justify-center'>
-            <div className='col-span-4'>
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-              category={heroPost.category}
 
-            />
-          )}
-          </div>
-          <div className='col-span-2'>
-          {morePosts.length > 0 && <LandingMorePosts posts={morePosts} />}
-          </div>
+
+      {/* Post Previews */}
+      <Layout preview={preview} loading={loading} >
+        <div className=' md:px-24 px-4 md:py-12'>
+        <QuoteOfTheDay />
+        </div>
+      </Layout>
+      <Layout preview={preview} loading={loading}>
+          <div className=' mx-auto w-full  px-6 md:px-24 md:py-12 '>
+          <BrowseBlogs posts={posts} categories={categories}/>
           </div>
       </Layout>
       {/* Editions Sections */}
       <Layout preview={preview} loading={loading}>
-          <div className="w-full mt-24 bg-[url(https://images.unsplash.com/photo-1597773150796-e5c14ebecbf5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover border h-[30vh]">
+          <div className="w-full bg-gradient-to-br from-sky-300 to-blue-700 bg-cover h-[50vh] bg-fixed">
           </div>
-          <div className='md:px-12'>
-          <div className=' shadow-lg mx-auto text-center border -mt-24 bg-white'>
-            <h1 className=' mt-24 font-bold text-4xl md:text-6xl'>Our Editions</h1>
-            <div className='md:p-12  flex'>
-              <EditionCarousel coverImage={editions} />
-            </div>
+          <div className='md:px-12 rounded-xl  min-h-[65rem]'>
+          <div className=' shadow-lg md:py-24 py-12 p-2 md:p-24 text-center -mt-72 bg-white rounded-2xl h-[40rem] md:h-[60rem]'>
+              <h1 className=' font-bold  font-sfheavy text-6xl bg-gradient-to-br from-sky-500 to-blue-800 bg-clip-text text-transparent'>Our Editions</h1>
+              <TabsDemo editions={editions} />
             </div>
           </div>  
       </Layout>
       {/* Category sections */}
-      <Layout preview={preview} loading={loading}>
+      {/* <Layout preview={preview} loading={loading}>
         <div className='w-full md:p-24 p-8'>
         <h1 className='font-bold mt-12 text-5xl '>Topic Wise Blogs</h1>
         <Separator />
@@ -90,18 +92,38 @@ export default function IndexPage(props: IndexPageProps) {
               />
                 <div className="absolute w-full h-full md:opacity-0 overlay bg-black/40 hover:bg-black/60 rounded-xl transition-all text-lg hover:text-2xl cursor-pointer text-white flex items-center justify-center">
                 <h1 className='p-6 font-bold  '>{category.name}</h1>
-
-
                 </div>
-
               </Link>)
             })}
         </div>
         </div>
-      </Layout>
+      </Layout> */}
       <Layout  preview={preview} loading={loading}>
-            {/* <EditionCard /> */}
-            <div></div>
+      <div className='w-full md:px-24 md:py-12 px-4'>
+        <h1 className='font-sfheavy mt-12 text-5xl '>Podcasts</h1>
+        <Separator />
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-12 mt-12'>
+        <iframe className='rounded-xl w-full aspect-[16/9]'  src="https://www.youtube.com/embed/90Aiidf2i-U?si=LBADkp_M4UKjugN1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>
+        </iframe>
+        <iframe className='rounded-xl w-full aspect-[16/9]' src="https://www.youtube.com/embed/JYnRkJZaG9c?si=kCJHrk8VkGvFKn6R" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>
+        </iframe>
+        <iframe className='rounded-xl w-full aspect-[16/9]' src="https://www.youtube.com/embed/8nxmBWHcdwo?si=XJSSA6tiqpOHmi-k" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>
+        </iframe>
+        <iframe className='rounded-xl w-full aspect-[16/9]' src="https://www.youtube.com/embed/AmkbFBczEAY?si=iEYZUCka5q5hvLsz" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>
+        </iframe>
+        <iframe className='rounded-xl w-full aspect-[16/9]' src="https://www.youtube.com/embed/ZY0Hi6U7nZI?si=VF_tm8ETz2xHCPIA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>
+        </iframe>
+        <iframe className='rounded-xl w-full aspect-[16/9]' src="https://www.youtube.com/embed/eZi07kYBD1k?si=hLvWkw4OdGclqmPa" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>
+        </iframe>
+        </div>
+        </div>
+      </Layout>
+
+      <Layout  preview={preview} loading={loading}>
+      <div className='w-full md:p-24 p-8'>
+        <h1 className='font-sfheavy mt-12 text-5xl '>Events</h1>
+        <Separator />
+      </div>
       </Layout>
 
       

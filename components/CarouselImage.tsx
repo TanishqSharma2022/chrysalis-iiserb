@@ -3,25 +3,25 @@ import { urlForImage } from 'lib/sanity.image'
 import Image from 'next/image'
 import Link from 'next/link'
 
-interface CoverImageProps {
+interface CarouselImageProps {
   title: string
   slug?: string
   image: any
   priority?: boolean
 }
 
-export default function CarouselImage(props: CoverImageProps) {
+export default function CarouselImage(props: CarouselImageProps) {
   const { title, slug, image: source, priority } = props
   const image = source?.asset?._ref ? (
     <div
       className={cn('shadow-small', {
-        'transition-shadow duration-200  shadow-lg hover:shadow-medium ': slug,
+        'transition-shadow duration-200 rounded-[50px]  shadow-lg hover:shadow-medium ': slug,
       })}
     >
       <Image
-        className=" max-h-[80vh]  aspect-[16/9] shadow-lg"
-        width={1500}
-        height={1000}
+        className="aspect-[16/9] CarouselImage shadow-lg "
+        width={2000}
+        height={2000}
         alt=""
         src={urlForImage(source).height(1000).width(1900).url()}
         sizes="100vw"

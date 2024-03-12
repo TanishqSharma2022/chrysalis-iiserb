@@ -80,14 +80,39 @@
 
 @font-face {
   font-family: 'Helvetica';
-  src: url('/fonts/HelveticaNeueLTProBd.otf') format('truetype');
+  src: url('/fonts/helveticaneue/HelveticaNeueLTProBd.otf') format('truetype');
   /* You can include multiple src declarations for different font formats */
 }
 
 
+@font-face {
+  font-family: 'SF Pro Display Black';
+  src: url('/fonts/sf/SF-Pro-Display-Black.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SF Pro Display Heavy';
+  src: url('/fonts/sf/SF-Pro-Display-Heavy.otf') format('truetype');
+}
+@font-face {
+  font-family: 'SF Pro Display Regular';
+  src: url('/fonts/sf/SF-Pro-Display-Regular.otf') format('truetype');
+}
+@font-face {
+  font-family: 'SF Pro Display Semibold';
+  src: url('/fonts/sf/SF-Pro-Display-Semibold.otf') format('truetype');
+}
+@font-face {
+  font-family: 'SF Pro Display Medium';
+  src: url('/fonts/sf/SF-Pro-Display-Medium.otf') format('truetype');
+}
+@font-face {
+  font-family: 'SF Pro Display Light';
+  src: url('/fonts/sf/SF-Pro-Display-Light.otf') format('truetype');
+}
+
 :root, body{
   overflow-x: hidden;
-  font-family: 'Helvetica';
 }
 
 
@@ -98,6 +123,13 @@
 
 .Carousel_Container:hover .Carousel_Label{
   bottom: 0;
+}
+
+.category:hover .CarouselImage{
+  opacity: 0;
+  transform: scale(1.3) rotate(180deg);
+  transition: transform 0.5s;
+
 }
 
 .category:hover .overlay{

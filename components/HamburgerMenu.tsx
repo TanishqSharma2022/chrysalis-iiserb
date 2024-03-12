@@ -120,24 +120,27 @@ export default function HamburgerMenu(props: IAppProps) {
     </button>
     
       <div
-        className={` invisible bg-black/50 backdrop-blur-sm transition-all w-full  h-full z-10 absolute top-0 left-0 overflow-hidden`}
+        className={` invisible bg-black/50 backdrop-blur-sm transition-all w-full  h-full z-[10] absolute top-0 left-0 overflow-hidden`}
         ref={menuOverlayRef}
       >
         <div
           ref={menuBarRef}
-          className={`menu p-12 absolute overflow-x-hidden flex flex-col justify-center top-0 w-full -right-[1000px] h-[100vh] bg-zinc-900 z-10 md:w-[60%]
+          className={`menu p-12 absolute overflow-x-hidden flex flex-col justify-center top-0 w-full -right-[1000px] h-[100vh] bg-zinc-900 z-[10] md:w-[60%]
             `}
         >
 
-        <button className='absolute top-24 left-12' ><Home size={30} color='white' /></button>
+          <div className='absolute h-96 w-96 blur-[300px] bg-gradient-to-tr from-pink-300 to-violet-400 top-12 right-12 '></div>
+
+        <button className='absolute top-24 left-12' >
+          <Home size={30} color='white' /></button>
           
           
-          <ul className="text-white font-bold text-3xl font-sans grid gap-8 menu_list  ">
+          <ul className="text-white  text-3xl  grid gap-8 menu_list font-sfheavy ">
             
-            <li className="hover:translate-x-6 transition-all  ">
+            <li className="hover:translate-x-6 transition-all font-sfheavy ">
               <Accordion type="single" collapsible>
                   <AccordionItem value="item-1">
-                    <AccordionTrigger className='font-bold text-3xl '>
+                    <AccordionTrigger className='text-3xl '>
                     <div className='flex gap-2  items-center overflow-hidden'>
                     <p className="hover:underline list-items">Topics</p>
 
@@ -145,23 +148,21 @@ export default function HamburgerMenu(props: IAppProps) {
                     </div>
                     </AccordionTrigger>
                     <AccordionContent  className=' ml-8  text-2xl drop-shadow-lg'>
-                      <ul className='grid grid-cols-2  gap-4'>
+                      <ul className='grid grid-cols-2  gap-4 '>
                       <Link href={`/topic/astronomy`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Astronomy</li></Link>
                       <Link href={`/topic/physics`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Physics</li></Link>
                       <Link href={`/topic/biology`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Biology</li></Link>
-                      <Link href={`/topic/chemistry`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Chemistry</li></Link>
                       <Link href={`/topic/mathematics`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Mathematics</li></Link>
                       <Link href={`/topic/psychology`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Psychology</li></Link>
                       <Link href={`/topic/general%20sciences`}><li className='cursor-pointer hover:translate-x-6 transition-all '>General Sciences</li></Link>
                       <Link href={`/topic/earth%20and%20environmental`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Earth and Environment</li></Link>
-                      <Link href={`/topic/economics`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Economics</li></Link>
                       </ul>
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
 
             </li>
-            <li className='hover:translate-x-6 hover:underline transition-all overflow-hidden'>
+            <li className='hover:translate-x-6 hover:underline font-sfheavy transition-all overflow-hidden'>
               <Link href={'/editions'}>
                 <p className="list-items">Editions</p>
               </Link>

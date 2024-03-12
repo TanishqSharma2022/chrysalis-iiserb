@@ -54,7 +54,7 @@ const members = [
     "Username": "tapasvi21@iiserb.ac.in",
     "Name": "Shamika Tapasvi",
     "Team": "Magazine",
-    "Roles": "Editorial",
+    "Roles": "Chief-Editor",
     "Bio": "Hey! I'm Shamika, a third-year chemistry major at IISERB. I'm the co-chief editor of the Chrysalis magazine.",
     "Picture": "/team/magazine/tapasvi_shamika_vinesh.jpg",
     "Instagram": "@shameka_shayouka",
@@ -287,7 +287,7 @@ const members = [
     "Username": "bhavika21@iiserb.ac.in",
     "Name": "Bhavika Saini",
     "Team": "Magazine",
-    "Roles": "Editorial",
+    "Roles": "Chief-Editor",
     "Bio": "Hello, I'm a third year EES major and I like reading, writing and basketball. I'm passionate about climate change and sustainability and my ultimate career goal is to contribute to combating the same. Chrysalis has been one of the best things that has happened to me in this college, so go flip through the magazine and write to us!^-^ ",
     "Picture": "/team/magazine/bhavika_saini.jpeg",
 
@@ -313,18 +313,18 @@ const members = [
     "Bio": "Junior at university, senior in coffee appreciation. When I'm not crunching numbers for EECS, you'll catch me in the coffee shop, sipping java (iykyk XD), and contemplating the mysteries of the tech universe. Science, policy, tech, and a latte – that's my perfect blend!",
     "Picture": "/team/scicomm/ishanya.jpg",
 
-    "Instagram": 'i.s.h.a.n.y.a ',
+    "Instagram": 'i.s.h.a.n.y.a',
     "LinkedIn": 'ishanya_iiserb'
   },{
     "Username": "ishanya21@iiserb.ac.in",
     "Name": "Akshat Pandey",
     "Team": "Core",
     "Roles": "Coordinator",
-    "Bio": "Bio",
-    "Picture": null,
+    "Bio": "As the reigning 'RIYAL' connoisseur and Chrysalis coordinator, I am a third-year data science major who decodes algorithms and memes with equal flair!",
+    "Picture": '/team/scicomm/akshat_pandey.jpg',
 
-    "Instagram": 'i.s.h.a.n.y.a ',
-    "LinkedIn": 'ishanya_iiserb'
+    "Instagram": 'akshatpandey47',
+    "LinkedIn": 'akshat-pandey-418299184'
   },
   {
     "Username": "prerna23@iiserb.ac.in",
@@ -333,10 +333,19 @@ const members = [
     "Roles": "Podcast",
     "Bio": "I am a Natural Sciences student trying to look for new experiences and opportunities.",
     "Picture": "/team/scicomm/prerna_makhne.jpg",
-
     "Instagram": 'prernamakne_',
-    "LinkedIn": 'Shagun_barkodia'
-  }
+    "LinkedIn": null
+  },
+  // {
+  //   "Username": "kulkarni22@iiserb.ac.in",
+  //   "Name": "Mrunal Kulkarni",
+  //   "Team": "Sci-Comm",
+  //   "Roles": "Podcasts, Events & Outreach",
+  //   "Bio": "Dedicated individual with a passion for creativity, learning, and making meaningful connections. Committed to personal growth and making a positive impact",
+  //   "Picture": "/team/scicomm/kulkarni.jpg",
+  //   "Instagram": 'prernamakne_',
+  //   "LinkedIn": null
+  // },
 ]
 
 

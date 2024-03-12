@@ -25,10 +25,17 @@ module.exports = {
       },
     },
     extend: {
-      fontFamily:[
+      fontFamily:{
+        helvetica: ["Helvetica Neue", "Helvetica", "sans-serif"],
+        sfblack: ["SF Pro Display Black", "sans-serif"],
+        sfheavy: ["SF Pro Display Heavy", "sans-serif"],
+        sfregular: ["SF Pro Display Regular", "sans-serif"],
+        sfmedium: ["SF Pro Display Medium", "sans-serif"],
+        sfsemibold: ["SF Pro Display Semibold", "sans-serif"],
+        sflight: ["SF Pro Display Light", "sans-serif"],
         
 
-      ],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -90,6 +97,8 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        'spin-slow': 'spin 10s linear infinite',
+
 
 
             shimmer: "shimmer 2s linear infinite"

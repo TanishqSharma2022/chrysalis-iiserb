@@ -17,6 +17,8 @@ export function Example({ posts }) {
   const [searchResults, setSearchResults] = useState([])
   const [searchQuery, setSearchQuery] = useState('')
 
+
+
   const handleSearchButtonClick = () => {
     setOpen(!open) // Toggle the `open` state
   }
@@ -31,8 +33,8 @@ export function Example({ posts }) {
     } else {
       const filteredPosts = posts.filter(
         (post) =>
-          post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          post.category?.name.toLowerCase().includes(searchQuery.toLowerCase()),
+          (post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          post.category?.name.toLowerCase().includes(searchQuery.toLowerCase())),
       )
       setSearchResults(filteredPosts)
     }
@@ -42,33 +44,6 @@ export function Example({ posts }) {
     if (searchResults?.length === 0 && searchQuery.trim() !== '') {
       return <CommandEmpty>No results found.</CommandEmpty>
     }
-
-    // if (searchResults.length === 0) {
-    //   return posts.slice(0, 3).map((post) => (
-    //     <Link key={post.slug} href={`/posts/${post.slug}`}>
-    //       <CommandItem className=" " key={post.slug}>
-    //         <div className="truncate ... w-[80%] flex items-center gap-2">
-    //           <div className="w-10 h-10 aspect-square">
-    //             <Image
-    //               className="h-auto w-full"
-    //               width={100}
-    //               height={100}
-    //               alt=""
-    //               src={urlForImage(post.coverImage?.asset._ref)
-    //                 .height(100)
-    //                 .width(100)
-    //                 .url()}
-    //             />
-    //           </div>
-    //           <h1>{post.title}</h1>
-    //         </div>
-    //         <Link href={`/topic/${post.category.name}`}>
-    //           {post.category.name}
-    //         </Link>
-    //       </CommandItem>
-    //     </Link>
-    //   ))
-    // }
 
     return searchResults.map((post) => (
       <Link key={post.slug} href={`/posts/${post.slug}`}>
@@ -99,8 +74,9 @@ export function Example({ posts }) {
 
   return (
     <>
-      <button onClick={handleSearchButtonClick}>
-        <Search className='md:size-[30px] hover:scale-110 opacity-50 hover:opacity-100 transition-all btn-search' />
+      <button onClick={handleSearchButtonClick} className='md:bg-gray-200 flex gap-6 px-4 py-2 items-center rounded-[20px]'>
+        <p className='md:flex hidden font-sfregular opacity-50'>Search.</p>
+        <Search className='md:size-[18px] hover:scale-110 opacity-50 hover:opacity-100 transition-all btn-search' />
       </button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>

@@ -1,5 +1,6 @@
 import IndexPage from 'components/IndexPage'
 import Navbar from 'components/Navbar'
+import PageLayout from 'components/PageLayout'
 import PreviewIndexPage from 'components/PreviewIndexPage'
 import { readToken } from 'lib/sanity.api'
 import { getAllEditions, getAllPosts, getAllPostsCategories, getClient, getSettings } from 'lib/sanity.client'
@@ -23,8 +24,9 @@ export default function Members(props: PageProps) {
 
   return (
     <>
-      <Navbar posts={posts} />
-      <IndexPage settings={settings} posts={posts} editions={editions} categories={categories} />
+      <PageLayout>
+        <IndexPage settings={settings} posts={posts} editions={editions} categories={categories} />
+      </PageLayout>
     </>
     )
 }
