@@ -21,6 +21,12 @@ export default defineType({
        
     }), 
     defineField({
+      name: 'editorsnote',
+      title: "Editor's Note",
+      type: 'string',
+     
+  }), 
+    defineField({
       name: 'coverImage',
       title: 'Cover Image',
       type: 'image',

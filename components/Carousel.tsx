@@ -21,7 +21,7 @@ export function Carousel({posts}) {
   
   }}
   return (
-    <section className="border p-0 ">
+    <section className=" p-0 ">
       <EmblaCarousel posts={posts} options={OPTIONS} />
     </section>
   )

@@ -7,11 +7,11 @@ import post from 'schemas/post'
 
 const BrowseBlogs = ({ posts, categories }) => {
   return (
-    <div className="w-full border h-fit ">
+    <div className="w-full   h-fit ">
       <h1 className="font-bold text-2xl md:text-5xl font-sfheavy">Browse Blogs</h1>
-      <div className="w-full mt-6  flex flex-col items-center ">
+      <div className="w-full  mt-6  flex flex-col items-center ">
         <Tabs defaultValue="Recents" className="w-full relative">
-          <TabsList className='overflow-x-scroll w-full'>
+          <TabsList className='overflow-x-scroll w-full md:w-fit'>
             <TabsTrigger value="Recents">Recents</TabsTrigger>
             {categories.map((category: any, index: number) => {
               return (

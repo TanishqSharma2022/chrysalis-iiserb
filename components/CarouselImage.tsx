@@ -19,7 +19,7 @@ export default function CarouselImage(props: CarouselImageProps) {
       })}
     >
       <Image
-        className="aspect-[16/9] CarouselImage shadow-lg "
+        className="aspect-[16/9] CarouselImage shadow-2xl "
         width={2000}
         height={2000}
         alt=""

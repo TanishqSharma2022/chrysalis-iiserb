@@ -1,24 +1,17 @@
-import Navbar from 'components/Navbar'
+
 import Layout from 'components/BlogLayout'
-import HeroPost from 'components/HeroPost'
 import IndexPageHead from 'components/IndexPageHead'
-import LandingMorePosts from 'components/LandingPage/LandingMoreStories'
-import * as demo from 'lib/demo.data'
 import type { Editions, Post, Settings } from 'lib/sanity.queries'
 import {Carousel} from './Carousel'
-import {EditionCarousel} from './EditionCarousel/EditionCarousel'
-import Image from 'next/image'
-import { urlForImage } from 'lib/sanity.image'
-import Link from 'next/link'
 import { Separator } from "components/ui/separator"
-import { EditionCard } from 'components/edition_card/EditionCard'
-import MainCarousel from './MainCarousel/MainCarousel'
 import '../css/embla.css'
 import '../css/base.css'
 import QuoteOfTheDay from './QuoteOfTheDay'
 import BrowseBlogs from './BrowseBlogs'
 import { TabsDemo } from './ui/EditionTabDemo'
+import FollowCursorDiv from './FollowCursor'
 
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 
 
@@ -34,13 +27,36 @@ export interface IndexPageProps {
 
 export default function IndexPage(props: IndexPageProps) {
   const { preview, loading, posts, settings, editions, categories } = props
-  const [heroPost, ...morePosts] = posts || []
+  const cursorX = useMotionValue(0);
+  const cursorY = useMotionValue(0);
+
+  const springConfig = {
+    damping: 100,
+    stiffness: 400,
+  };
+
+  const cursorXSpring = useSpring(cursorX, springConfig);
+  const cursorYSpring = useSpring(cursorY, springConfig);
+
+  const handleMouseMove = (e) => {
+    cursorX.set(e.clientX);
+    cursorY.set(e.clientY);
+  };
 
   return (
-    <div className='overflow-x-hidden'>
+    <div className='overflow-x-hidden' onMouseMove={handleMouseMove}>
+      <motion.div
+      style={{
+        pointerEvents: 'none',
+        x: cursorXSpring,
+        y: cursorYSpring,
+      }}
+      className='rounded-full h-4 w-4 bg-gradient-to-tr from-sky-200 to-blue-300  fixed  top-0 left-0 '
+    />
+
+
       <IndexPageHead settings={settings} />
 
-      {/* <MainCarousel slides={SLIDES} options={OPTIONS} /> */}
 
 
 

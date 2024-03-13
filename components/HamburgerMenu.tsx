@@ -134,13 +134,14 @@ export default function HamburgerMenu(props: IAppProps) {
                     </AccordionTrigger>
                     <AccordionContent  className=' ml-8  text-2xl drop-shadow-lg'>
                       <ul className='grid grid-cols-2  gap-4 '>
-                      <Link href={`/topic/astronomy`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Astronomy</li></Link>
-                      <Link href={`/topic/physics`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Physics</li></Link>
-                      <Link href={`/topic/biology`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Biology</li></Link>
-                      <Link href={`/topic/mathematics`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Mathematics</li></Link>
-                      <Link href={`/topic/psychology`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Psychology</li></Link>
-                      <Link href={`/topic/general%20sciences`}><li className='cursor-pointer hover:translate-x-6 transition-all '>General Sciences</li></Link>
-                      <Link href={`/topic/earth%20and%20environmental`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Earth and Environment</li></Link>
+                      <Link href={`/topic/Astronomy`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Astronomy</li></Link>
+                      <Link href={`/topic/Physics`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Physics</li></Link>
+                      <Link href={`/topic/Biology`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Biology</li></Link>
+                      <Link href={`/topic/Technology`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Technology</li></Link>
+                      <Link href={`/topic/Mathematics`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Mathematics</li></Link>
+                      <Link href={`/topic/Psychology`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Psychology</li></Link>
+                      <Link href={`/topic/General%20Sciences`}><li className='cursor-pointer hover:translate-x-6 transition-all '>General Sciences</li></Link>
+                      <Link href={`/topic/Earth%20and%20Environment`}><li className='cursor-pointer hover:translate-x-6 transition-all '>Earth and Environment</li></Link>
                       </ul>
                     </AccordionContent>
                   </AccordionItem>

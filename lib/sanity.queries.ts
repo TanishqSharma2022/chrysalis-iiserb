@@ -62,6 +62,7 @@ export const allEditions = groq`
   _id,
   title,
   description,
+  editorsnote,
   coverImage, 
   File,
   "pdf_download_url": File.asset -> url
@@ -105,7 +106,9 @@ export interface Editions {
     _id: string,
     title : string,
     description : string,
+    editorsnote : string,
     coverImage?: any, 
     File?: any,
     download_url: string
+
   }
