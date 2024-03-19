@@ -6,14 +6,17 @@ import { urlForImage } from 'lib/sanity.image'
 import { Separator } from './separator'
 import Link from 'next/link'
 
+
+
+
 export function TabsDemo({ editions }) {
-  const tabs = editions.map((edition, index) => {
+  const tabs = editions.slice(0,3).map((edition, index) => {
     return {
       title: edition.title,
       value: index.toString(),
       description: edition.description,
       content: (
-        <div className="w-full  overflow-hidden border  relative rounded-2xl p-10 text-xl  md:text-4xl  text-white ">
+        <div className="w-full overflow-hidden   relative rounded-2xl p-6 text-xl  md:text-4xl  text-white ">
           <Image
             src={urlForImage(edition.coverImage?.asset._ref)
               .height(1000)
@@ -25,7 +28,7 @@ export function TabsDemo({ editions }) {
             className="object-cover h-full top-0 left-0 w-full absolute md:-bottom-48 brightness-[0.20]  z-[-1] rounded-2xl"
           />
 
-          <p className="z-[0] font-sfheavy underline underline-offset-8 ">{edition.description}</p>
+          <p className="z-[0] font-sfbold  ">{edition.description}</p>
 
           <DummyContent
             coverImage={edition.coverImage}
@@ -36,8 +39,28 @@ export function TabsDemo({ editions }) {
     }
   })
 
+  tabs.push({
+    title: 'More',
+    value: 'more',
+    onclick: () => {},
+    content: (
+      <div className="flex items-center justify-center bg-white h-full w-full">
+          <Image
+            src={'/images/1.jpg'}
+            alt="dummy image"
+            width="1000"
+            height="1000"
+            className="object-cover h-full top-0 left-0 w-full absolute md:-bottom-48 brightness-[0.20]  z-[-1] rounded-2xl"
+          />
+        <Link href="/editions">
+          View All Editions
+        </Link>
+      </div>
+    ),
+  });
+
   return (
-    <div className="h-[40rem] [perspective:1000px]  relative b flex flex-col md:max-w-5xl mx-auto w-full  items-start justify-start my-10">
+    <div className="h-[40rem] [perspective:1000px]  relative  flex flex-col md:max-w-5xl mx-auto w-full  items-start justify-start mt-4">
       <Tabs tabs={tabs} />
     </div>
   )
@@ -51,12 +74,12 @@ const DummyContent = ({ coverImage, download }) => {
         alt="dummy image"
         width="1000"
         height="1000"
-        className="object-cover  w-full md:w-[40%] lg:h-full lg:p-12  lg:ml-12 -mb-24    rounded-lg md:rounded-2xl"
+        className="object-cover  w-[70%] md:w-[40%] lg:h-full lg:p-12  lg:ml-12 -mb-24    rounded-lg md:rounded-2xl"
       />
       <div className="p-6 flex flex-col items-start gap-4 md:mt-12">
         <p className="font-serif md:flex hidden italic md:text-xl lg:text-3xl text-start"> Chief Editors' Note</p>
         <Separator className='md:flex hidden' />
-        <p className="text-xs lg:text-sm md:flex hidden font-sflight text-start italic mt-2">
+        <p className="text-xs lg:text-sm md:flex hidden font-sflight text-start mt-2">
           Dear Readers, Welcome to the latest edition of Chrysalis. As the
           Editors-in-Chief, we are delighted to present to you the culmination
           of months of hard work, dedication, and passion from our team as well

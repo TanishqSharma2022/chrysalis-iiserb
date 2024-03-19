@@ -20,10 +20,10 @@ const BlogCard = ({post}) => {
       />
 
         <Link href={`/posts/${post.slug}`} target='_blank'>
-          <h1 className=' font-sfheavy hover:underline text-lg mt-4'>{post.title}</h1></Link>
-        <p className=' text-sm font-sfregular truncate mt-4'>{post.excerpt}</p>
-        <div className='mt-4 flex gap-4 text-xs items-center font-sflregular'>
-        {post.author && <AuthorAvatar name={post.author.name} picture={post.author.picture} />} .
+          <h1 className=' font-sfbold hover:underline text-lg mt-4'>{post.title}</h1></Link>
+        <p className=' text-xs font-sfregular truncate mt-4'>{post.excerpt}</p>
+        <div className='mt-4 flex gap-4 text-[10px] items-center font-sflregular'>
+        {post.author && <AuthorAvatar name={post.author?.name} picture={post.author?.picture} />} .
         <Date dateString={post.date} />
 
         </div>

@@ -19,7 +19,6 @@ export default function PageLayout({ children }: LayoutProps) {
     async function getPosts(){
       const client = getClient();
       const post = await Promise.all([getAllPosts(client)]);;
-      console.log(post)
       setPosts(post)
   }
   getPosts();

@@ -8,6 +8,7 @@ type Tab = {
   title: string;
   value: string;
   content?: string | React.ReactNode | any;
+  onclick: () => void;
 };
 
 export const Tabs = ({
@@ -49,6 +50,7 @@ export const Tabs = ({
             key={tab.title}
             onClick={() => {
               moveSelectedTabToTop(idx);
+              tab.onclick;
             }}
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
@@ -68,7 +70,7 @@ export const Tabs = ({
               />
             )}
 
-            <span className="relative block text-black ">
+            <span className="relative block text-black font-sfregular text-sm md:text-lg ">
               {tab.title}
             </span>
           </button>

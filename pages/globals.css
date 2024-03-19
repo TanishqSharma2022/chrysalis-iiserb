@@ -95,6 +95,10 @@
   src: url('/fonts/sf/SF-Pro-Display-Heavy.otf') format('truetype');
 }
 @font-face {
+  font-family: 'SF Pro Display Bold';
+  src: url('/fonts/sf/SF-Pro-Display-Bold.otf') format('truetype');
+}
+@font-face {
   font-family: 'SF Pro Display Regular';
   src: url('/fonts/sf/SF-Pro-Display-Regular.otf') format('truetype');
 }

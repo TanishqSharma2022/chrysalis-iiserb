@@ -29,6 +29,7 @@ module.exports = {
         helvetica: ["Helvetica Neue", "Helvetica", "sans-serif"],
         sfblack: ["SF Pro Display Black", "sans-serif"],
         sfheavy: ["SF Pro Display Heavy", "sans-serif"],
+        sfbold: ["SF Pro Display Bold", "sans-serif"],
         sfregular: ["SF Pro Display Regular", "sans-serif"],
         sfmedium: ["SF Pro Display Medium", "sans-serif"],
         sfsemibold: ["SF Pro Display Semibold", "sans-serif"],

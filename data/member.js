@@ -181,7 +181,7 @@ const members = [
     "Team": "Sci-Comm",
     "Roles": "Podcast; Events & Outreach",
     "Bio": "Dedicated to creative thinking, writing, podcasting, and event coordination. Crafting compelling stories and memorable experiences with innovative flair.",
-    "Picture": "/team/scicomm/kulkarni_mrunal_pravin.jpg",
+    "Picture": "/team/scicomm/kulkarni.jpg",
 
     "Instagram": "mrunal0823",
     "LinkedIn": "mrunal-kulkarni-ba05a3272"
@@ -336,16 +336,16 @@ const members = [
     "Instagram": 'prernamakne_',
     "LinkedIn": null
   },
-  // {
-  //   "Username": "kulkarni22@iiserb.ac.in",
-  //   "Name": "Mrunal Kulkarni",
-  //   "Team": "Sci-Comm",
-  //   "Roles": "Podcasts, Events & Outreach",
-  //   "Bio": "Dedicated individual with a passion for creativity, learning, and making meaningful connections. Committed to personal growth and making a positive impact",
-  //   "Picture": "/team/scicomm/kulkarni.jpg",
-  //   "Instagram": 'prernamakne_',
-  //   "LinkedIn": null
-  // },
+  {
+    "Username": "vedanshi23@iiserb.ac.in",
+    "Name": "Vedanshi",
+    "Team": "Sci-Comm",
+    "Roles": "Web Dev",
+    "Bio": "Neurotic, nothing else to see here, just the co-semi-creator of this site.",
+    "Picture": "/team/scicomm/vedanshi.jpg",
+    "Instagram": null,
+    "LinkedIn": "vedanshi-vaghela"
+  },
 ]
 
 

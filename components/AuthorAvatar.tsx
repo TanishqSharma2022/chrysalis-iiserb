@@ -7,7 +7,7 @@ export default function AuthorAvatar(props: Author) {
 
   return (
     <div className="flex items-center">
-      <div className="relative mr-4 h-8 w-8">
+      <div className="relative mr-4 h-6 w-6">
         <Image
           src={
             picture?.asset?._ref
@@ -15,12 +15,12 @@ export default function AuthorAvatar(props: Author) {
               : 'https://source.unsplash.com/96x96/?face'
           }
           className="rounded-full"
-          height={75}
-          width={75}
+          height={50}
+          width={50}
           alt={picture?.alt ?? name}
         />
       </div>
-      <div className="text-sm md:text-sm font-bold text-balance">{name}</div>
+      <div className="text-xs font-bold text-balance">{name}</div>
     </div>
   )
 }
