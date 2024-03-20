@@ -338,10 +338,10 @@ const members = [
   },
   {
     "Username": "vedanshi23@iiserb.ac.in",
-    "Name": "Vedanshi",
+    "Name": "Vedanshi Vaghela",
     "Team": "Sci-Comm",
     "Roles": "Web Dev",
-    "Bio": "Neurotic, nothing else to see here, just the co-semi-creator of this site.",
+    "Bio": "Neurotic and Indifferent(most of the time), just like a programmer.",
     "Picture": "/team/scicomm/vedanshi.jpg",
     "Instagram": null,
     "LinkedIn": "vedanshi-vaghela"
