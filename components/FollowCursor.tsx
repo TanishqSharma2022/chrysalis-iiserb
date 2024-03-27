@@ -7,8 +7,8 @@ const FollowCursorDiv = () => {
   const cursorY = useMotionValue(0);
 
   const springConfig = {
-    damping: 15,
-    stiffness: 300,
+    damping: 10,
+    stiffness: 400,
   };
 
   const cursorXSpring = useSpring(cursorX, springConfig);
